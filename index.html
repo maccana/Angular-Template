@@ -50,7 +50,7 @@
 						]; 	
 
 		$scope.worldsPercentage = function (countryPopulation) { 
-			return (countryPopulation / $scope.population)*100;
+			return Math.round((countryPopulation / $scope.population)* 100) / 100;
 		}	
 	};
 
