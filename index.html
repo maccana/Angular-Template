@@ -1,14 +1,17 @@
 <!DOCTYPE>
-<html> 
+<html ng-app> 
 
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> 
 
 </head>
-<body ng-app ng-init="name = 'Angular'"> 
-	<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
-	Say hello to: <input type="text" ng-model="name">
-	<h1>Hello, {{name}}!</h1>
+<body> 
+
+	<div ng-init="name = 'Angular'">
+		<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
+		Say hello to: <input type="text" ng-model="name">
+		<h1>Hello, {{name}}!</h1>
+	</div>
 
 	<hr>
 	<br>
