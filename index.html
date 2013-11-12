@@ -27,7 +27,9 @@
 		<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
 		<ul ng-controller="WorldCtrl"> 
 			<li ng-repeat="country in countries">
-				{{country.name}} has population of {{country.population}} </li>
+				{{country.name}} has population of {{country.population}},
+				{{worldsPercentage(country.population)}} % of the World's
+				population </li>
 			<hr>
 			World's population: {{population}} millions 
 		</ul>
@@ -45,8 +47,15 @@
 		$scope.countries = [
 							{name: 'France', population: 63.1}, 
 							{name: 'United Kingdom', population: 61.8},
-						]; 		
-		};
+						]; 	
+
+		$scope.worldsPercentage = function (countryPopulation) { 
+			return (countryPopulation / $scope.population)*100;
+		}	
+	};
+
+
+
 </script>
 
 </html>
