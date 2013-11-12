@@ -20,6 +20,18 @@
 		Say hello to: <input type="text" ng-model="name"><br> 
 		<h1>Hello, {{getName()}}!</h1>
 	</div>
+
+	<hr>
+	<div>
+		<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
+		<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
+		<ul ng-controller="WorldCtrl"> 
+			<li ng-repeat="country in countries">
+				{{country.name}} has population of {{country.population}} </li>
+			<hr>
+			World's population: {{population}} millions 
+		</ul>
+	</div>	
 </body> 
 <script type="text/javascript">
 	var HelloCtrl = function ($scope) {
@@ -27,6 +39,14 @@
 			return $scope.name;
 		};
 	}
+
+	var WorldCtrl = function ($scope) { 
+		$scope.population = 7000; 
+		$scope.countries = [
+							{name: 'France', population: 63.1}, 
+							{name: 'United Kingdom', population: 61.8},
+						]; 		
+		};
 </script>
 
 </html>
