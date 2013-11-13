@@ -1,27 +1,20 @@
 <!DOCTYPE>
-<html ng-app> 
+<html ng-app='hello'> 
 
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> 
 
 </head>
-<body ng-init="thing = {name : 'Angular'}"> 
+<body ng-init="greeting = {name : 'Angular'}"> 
 
 	<div>
 		<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
-		Say hello to: <input type="text" ng-model="thing.name">
-		<h1>Hello, {{thing.name}}!</h1>
+		Say hello to: <input type="text" ng-model="greeting.name">
+		<h1>Hello, {{greeting.name}}!</h1>
 	</div>
 
 	<hr>
 	<br>
-	<p>This input box is performing the same task but is also using the <b>'ng-controller'</b> directive to establish an angualr controller called 'HelloCtrl' to store and update the model data.</p>
-	<div ng-controller="HelloCtrl"> 
-		Say hello to: <input type="text" ng-model="name"><br> 
-		<h1>Hello, {{thing.name}} {{getName()}}!</h1>
-	</div>
-
-	<hr>
 	<div>
 		<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
 		<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
@@ -34,28 +27,9 @@
 			World's population: {{population}} millions 
 		</ul>
 	</div>	
+
 </body> 
-<script type="text/javascript">
-	var HelloCtrl = function ($scope) {
-		$scope.getName = function() { 
-			return $scope.name;
-		};
-	}
-
-	var WorldCtrl = function ($scope) { 
-		$scope.population = 7000; 
-		$scope.countries = [
-							{name: 'France', population: 63.1}, 
-							{name: 'United Kingdom', population: 61.8},
-						]; 	
-
-		$scope.worldsPercentage = function (countryPopulation) { 
-			return Math.round((countryPopulation / $scope.population)* 100) / 100;
-		}	
-	};
-
-
-
-</script>
+<!-- app module -->
+<script type="text/javascript" src="app/app.js"></script>
 
 </html>
