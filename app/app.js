@@ -2,6 +2,11 @@ angular.module('hello', [])
 		.controller('HelloCtrl', function($scope){
 			$scope.name = 'Angular'; 
 		})
+		.controller('TextAreaWithLimitCtrl', function($scope){
+			$scope.remaining = function () {
+			return MAX_LEN - $scope.message.length;
+			};
+		})
 
 		var WorldCtrl = function ($scope) { 
 		$scope.population = 7000; 
