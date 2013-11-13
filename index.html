@@ -5,12 +5,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> 
 
 </head>
-<body> 
+<body ng-init="thing = {name : 'Angular'}"> 
 
-	<div ng-init="name = 'Angular'">
+	<div>
 		<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
-		Say hello to: <input type="text" ng-model="name">
-		<h1>Hello, {{name}}!</h1>
+		Say hello to: <input type="text" ng-model="thing.name">
+		<h1>Hello, {{thing.name}}!</h1>
 	</div>
 
 	<hr>
@@ -18,7 +18,7 @@
 	<p>This input box is performing the same task but is also using the <b>'ng-controller'</b> directive to establish an angualr controller called 'HelloCtrl' to store and update the model data.</p>
 	<div ng-controller="HelloCtrl"> 
 		Say hello to: <input type="text" ng-model="name"><br> 
-		<h1>Hello, {{getName()}}!</h1>
+		<h1>Hello, {{thing.name}} {{getName()}}!</h1>
 	</div>
 
 	<hr>
