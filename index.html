@@ -51,6 +51,14 @@
 		<p>Value: {{value}}</p> 
 		<button ng-click="incrementValue()">Add 1 to value</button>
 	</div>
+
+	<hr><br>
+
+	<div ng-controller="toggleImage">
+		<button id="toggle-btn" ng-click="toggle()">Hide</button>
+		<p ng-show="visible">Show Angularjs logo</p>
+		<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
+	</div>
 </body> 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
