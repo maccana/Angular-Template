@@ -16,6 +16,7 @@ angular.module('hello', [])
 				return Math.round((countryPopulation / $scope.population)* 100) / 100;
 			}	
 		}
+
 		var addRemoveGreetingCtrl = function ($scope) {
 			$scope.name = "";
 
@@ -26,9 +27,26 @@ angular.module('hello', [])
 					$scope.text = "";
 			});
 		} 
+
+		/* alternative syntax for controller function */
 		function incrementValue($scope){ 
 			$scope.value = 1;
 				$scope.incrementValue = function(value) { 
 					$scope.value += 1;
 				}
+		}
+	
+		function toggleImage($scope){
+			$scope.visible = true; 
+			$scope.toggle = function() {
+				btn = document.getElementById('toggle-btn');
+					if(btn.innerHTML == 'Show Image!') {
+						btn.innerHTML = 'Hide Image!';
+
+					} 
+					else 
+						btn.innerHTML = 'Show Image!';
+						$scope.visible = !$scope.visible;
+
+			}
 		}
