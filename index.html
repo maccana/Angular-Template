@@ -28,6 +28,13 @@
 			World's population: {{population}} million
 		</ul>
 	</div><br>
+	<hr><br>
+	<!-- toggle image show / hide -->	
+	<div ng-controller="toggleImage">
+		<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
+		<p id="pText" ng-show="visible">Image Visible</p>
+		<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
+	</div>
 
 	<hr>
 	<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
@@ -52,13 +59,7 @@
 		<button ng-click="incrementValue()">Add 1 to value</button>
 	</div>
 
-	<hr><br>
 
-	<div ng-controller="toggleImage">
-		<button id="toggle-btn" ng-click="toggle()">Hide</button>
-		<p ng-show="visible">Show Image</p>
-		<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
-	</div>
 </body> 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
