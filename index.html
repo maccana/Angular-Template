@@ -2,7 +2,8 @@
 <html ng-app='hello'> 
 
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> 
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
+<script src="angular/angular.js"></script>
 
 </head>
 <body ng-init="greeting = {name : 'Angular'}"> 
@@ -26,8 +27,9 @@
 			<hr>
 			World's population: {{population}} millions 
 		</ul>
-	</div>	
+	</div><br>
 
+	<hr>
 	<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
 		<div class="row">
 			<textarea ng-model="message">{{message}}</textarea> 
@@ -37,7 +39,12 @@
 			<button ng-click="clear()">Clear</button>
 		</div>
 	</div>
-
+	<hr><br>
+	<p>Input your name to see greeting. Clear input to remove greeting again.</p>
+	<div ng-controller="addRemoveGreetingCtrl"> 
+		<input type="text" ng-model="name" placeholder="Enter your name"> 
+		<p>{{text}}</p>
+	</div>
 </body> 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
