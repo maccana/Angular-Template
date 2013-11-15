@@ -45,6 +45,12 @@
 		<input type="text" ng-model="name" placeholder="Enter your name"> 
 		<p>{{text}}</p>
 	</div>
+
+	<hr><br>
+	<div ng-controller="incrementValue">
+		<p>Value: {{value}}</p> 
+		<button ng-click="incrementValue()">Add 1 to value</button>
+	</div>
 </body> 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
