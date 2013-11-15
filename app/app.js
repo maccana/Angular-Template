@@ -26,3 +26,9 @@ angular.module('hello', [])
 					$scope.text = "";
 			});
 		} 
+		function incrementValue($scope){ 
+			$scope.value = 1;
+				$scope.incrementValue = function(value) { 
+					$scope.value += 1;
+				}
+		}
