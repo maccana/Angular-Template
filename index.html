@@ -2,64 +2,69 @@
 <html ng-app='hello'> 
 
 <head>
+
+<!-- normalize -->
+<link rel="stylesheet" href="styles/normalize.css">	
+<link rel="stylesheet" href="styles/style.css">	
 <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
 <script src="angular/angular.js"></script>
 
 </head>
 <body ng-init="greeting = {name : 'Angular'}"> 
+	<div id="page-wrapper">
+		<div id="main">
+			<div>
+				<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
+				Say hello to: <input type="text" ng-model="greeting.name">
+				<h1>Hello, {{greeting.name}}!</h1>
+			</div>
 
-	<div>
-		<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
-		Say hello to: <input type="text" ng-model="greeting.name">
-		<h1>Hello, {{greeting.name}}!</h1>
-	</div>
-
-	<hr>
-	<br>
-	<div>
-		<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
-		<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
-		<ul ng-controller="WorldCtrl"> 
-			<li ng-repeat="country in countries">
-				{{country.name}} has population of {{country.population}},
-				{{worldsPercentage(country.population)}} % of the World's
-				population </li>
 			<hr>
-			World's population: {{population}} million
-		</ul>
-	</div><br>
-	<hr><br>
-	<!-- toggle image show / hide -->	
-	<div ng-controller="toggleImage">
-		<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
-		<p id="pText" ng-show="visible">Image Visible</p>
-		<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
-	</div>
+			<br>
+			<div>
+				<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
+				<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
+				<ul ng-controller="WorldCtrl"> 
+					<li ng-repeat="country in countries">
+						{{country.name}} has population of {{country.population}},
+						{{worldsPercentage(country.population)}} % of the World's
+						population </li>
+					<hr>
+					World's population: {{population}} million
+				</ul>
+			</div><br>
+			<hr><br>
+			<!-- toggle image show / hide -->	
+			<div ng-controller="toggleImage">
+				<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
+				<p id="pText" ng-show="visible">Image Visible</p>
+				<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
+			</div>
 
-	<hr>
-	<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
-		<div class="row">
-			<textarea ng-model="message">{{message}}</textarea> 
+			<hr>
+			<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
+				<div class="row">
+					<textarea ng-model="message">{{message}}</textarea> 
+				</div>
+				<div class="row"> 
+					<button ng-click="send()">Send</button> 
+					<button ng-click="clear()">Clear</button>
+				</div>
+			</div>
+			<hr><br>
+			<p>Input your name to see greeting. Clear input to remove greeting again.</p>
+			<div ng-controller="addRemoveGreetingCtrl"> 
+				<input type="text" ng-model="name" placeholder="Enter your name"> 
+				<p>{{text}}</p>
+			</div>
+
+			<hr><br>
+			<div ng-controller="incrementValue">
+				<p>Value: {{value}}</p> 
+				<button ng-click="incrementValue()">Add 1 to value</button>
+			</div>
 		</div>
-		<div class="row"> 
-			<button ng-click="send()">Send</button> 
-			<button ng-click="clear()">Clear</button>
-		</div>
 	</div>
-	<hr><br>
-	<p>Input your name to see greeting. Clear input to remove greeting again.</p>
-	<div ng-controller="addRemoveGreetingCtrl"> 
-		<input type="text" ng-model="name" placeholder="Enter your name"> 
-		<p>{{text}}</p>
-	</div>
-
-	<hr><br>
-	<div ng-controller="incrementValue">
-		<p>Value: {{value}}</p> 
-		<button ng-click="incrementValue()">Add 1 to value</button>
-	</div>
-
-
 </body> 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
