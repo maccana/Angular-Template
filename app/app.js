@@ -29,7 +29,7 @@ var app = angular.module('hello', [])
 		} 
 
 		/* alternative syntax for controller function */
-		function incrementValue($scope){ 
+		function incrementDecrementValue($scope){ 
 			$scope.value = 1;
 				$scope.incrementValue = function(value) { 
 					$scope.value += 1;
