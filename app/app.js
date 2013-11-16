@@ -1,4 +1,4 @@
-angular.module('hello', []) 
+var app = angular.module('hello', []) 
 		.controller('TextAreaWithLimitCtrl', function($scope){
 			$scope.remaining = function () {
 			return MAX_LEN - $scope.message.length;
@@ -34,19 +34,43 @@ angular.module('hello', [])
 				$scope.incrementValue = function(value) { 
 					$scope.value += 1;
 				}
+				$scope.resetValue = function() {
+					$scope.value = 1;
+					//console.log('reset'); //debugging in console
+				}
 		}
+
 	
 		function toggleImage($scope){
 			$scope.visible = true; 
 			$scope.toggle = function() {
 				btn = document.getElementById('toggle-btn');
-					if(btn.innerHTML == 'Show Image!') {
-						btn.innerHTML = 'Hide Image!';
+					if(btn.innerHTML == 'Show Image') {
+						btn.innerHTML = 'Hide Image';
 
 					} 
 					else 
-						btn.innerHTML = 'Show Image!';
+						btn.innerHTML = 'Show Image';
 						$scope.visible = !$scope.visible;
 
 			}
 		}
+		
+	app.directive("myWidget",function(){
+			var linkFunction = function(scope, element, attributes) {
+		
+			var paragraph = element.children()[0];
+			$(paragraph).on("click", function() {
+
+			$(this).css({ "background-color": "red" });
+		});
+	};
+			return {
+				restrict: "E",
+				link: linkFunction
+		};
+	});	
+
+		
+		
+	
