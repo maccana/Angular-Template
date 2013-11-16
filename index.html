@@ -33,14 +33,17 @@
 					World's population: {{population}} million
 				</ul>
 			</div><br>
-			<hr><br>
+			<hr><br><br>
 			<!-- toggle image show / hide -->	
 			<div ng-controller="toggleImage">
 				<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
 				<p id="pText" ng-show="visible">Image Visible</p>
 				<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
 			</div>
+			<br><br>
 
+			<label><input type="checkbox" ng-model="checked"/>Toggle Button</label> 
+			<button ng-disabled="checked">Press me</button>
 			<hr>
 			<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
 				<div class="row">
