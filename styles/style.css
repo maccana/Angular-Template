@@ -6,3 +6,13 @@
 	padding: 20px;
 	margin-top:50px;
 }
+#image-container {
+	width:50%;
+	margin:auto;
+	border:0px solid red;
+	padding:20px;
+}
+img {
+	width:100%;
+
+}
