@@ -38,6 +38,10 @@ var app = angular.module('hello', [])
 					$scope.value = 1;
 					//console.log('reset'); //debugging in console
 				}
+				$scope.decrementValue = function(value) {
+					$scope.value -= 1;
+
+				}
 		}
 
 	
