@@ -16,7 +16,7 @@
 			<div>
 				<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
 				Say hello to: <input type="text" ng-model="greeting.name">
-				<h1>Hello, {{greeting.name}}!</h1>
+				<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1>
 			</div>
 
 			<hr>
@@ -37,8 +37,10 @@
 			<!-- toggle image show / hide -->	
 			<div ng-controller="toggleImage">
 				<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
-				<p id="pText" ng-show="visible">Image Visible</p>
-				<img ng-show="visible" src="img/angularjs-logo.png" width="50%">
+				<p id="pText" ng-show="visible">The official Angularjs logo</p>
+				<div id="image-container">
+					<img ng-show="visible" src="img/angularjs-logo.png">
+				</div>
 			</div>
 			<br><br>
 			<hr>
@@ -78,7 +80,7 @@
 	</div>
 </body> 
 <!-- angular app module -->
-<script src="app/directives/dir.js"></script>
+
 <script type="text/javascript" src="app/app.js"></script>
 
 
