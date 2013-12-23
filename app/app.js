@@ -5,16 +5,30 @@ var app = angular.module('hello', [])
 			};
 		})
 
+
 		var WorldCtrl = function ($scope) { 
 			$scope.population = 7000; 
 			$scope.countries = [
 							{name: 'France', population: 63.1}, 
 							{name: 'United Kingdom', population: 61.8},
+							{name: 'Republic of Ireland', population: 4.8},
 						]; 	
 
 			$scope.worldsPercentage = function (countryPopulation) { 
 				return Math.round((countryPopulation / $scope.population)* 100) / 100;
 			}	
+		}
+
+		var playlistCtrl = function($scope,$filter) {
+			$scope.selectedAlbumSongs = [
+				{'name': 'song1', 'url': 'http://test/song1.mp3' },
+				{'name': 'song2', 'url': 'http://test/song2.mp3' },
+				{'name': 'song3', 'url': 'http://test/song3.mp3' }
+
+			];
+			$scope.selectedSongs = function () {
+        		$scope.playList = $filter('filter')($scope.selectedAlbumSongs, {checked: true});
+			}
 		}
 
 		var addRemoveGreetingCtrl = function ($scope) {
@@ -60,20 +74,25 @@ var app = angular.module('hello', [])
 			}
 		}
 		
-	app.directive("myWidget",function(){
+		app.directive("myWidget",function(){
 			var linkFunction = function(scope, element, attributes) {
 		
-			var paragraph = element.children()[0];
-			$(paragraph).on("click", function() {
+				var paragraph = element.children()[0];
+				$(paragraph).on("click", function() {
 
-			$(this).css({ "background-color": "red" });
-		});
-	};
+					$(this).css({ "background-color": "red" });
+				});
+			};
 			return {
 				restrict: "E",
 				link: linkFunction
+				
 		};
+
+
 	});	
+
+
 
 		
 		
