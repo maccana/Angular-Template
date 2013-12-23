@@ -87,10 +87,10 @@ var app = angular.module('hello', [])
 				restrict: "E",
 				link: linkFunction
 				
-		};
+			};
 
 
-	});	
+		})	
 
 
 
