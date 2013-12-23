@@ -10,6 +10,7 @@
 <script src="jquery/jquery.js"></script>
 <script src="angular/angular.js"></script>
 
+
 </head>
 <body ng-init="greeting = {name : 'Angular'}"> 
 	<div id="page-wrapper">
@@ -77,15 +78,27 @@
 				<button ng-click="resetValue()">Reset</button>
 			</div>
 			<hr>
+			<pre>Selecting song elements from array defined in controller via checkbox filter</pre>
+			<div ng-controller="playlistCtrl">
+			   <legend>Select songs to play</legend>
+			<label ng-repeat="song in selectedAlbumSongs">
+			    <input type="checkbox" name="{{song.url}}" id="{{song.name}}" ng-model="song.checked" ng-change="selectedSongs()">
+			    <label for="{{song.name}}">{{song.name}}</label>
+			</label>
+			    {{playList}}
+			</div>
+
+			<hr>
 			<!-- custom directive -->
+			<pre>Prototype widget directive</pre>
 			<my-widget>
 				<p>Hello World</p> 
 			</my-widget>
 		</div>
 	</div>
 </body> 
-<!-- angular app module -->
 
+<!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
 
 
