@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles/normalize.css">	
 <link rel="stylesheet" href="styles/style.css">	
 <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
+<script src="jquery/jquery.js"></script>
 <script src="angular/angular.js"></script>
 
 </head>
@@ -46,6 +47,7 @@
 			<hr>
 			<br>
 			<p>Click check box to disable / enable button</p>
+			<pre>Prototype for enable disable settings for profile</pre>
 			<label><input type="checkbox" ng-model="checked"/>Toggle Button</label> 
 			<button ng-disabled="checked">Press me</button>
 			<br><br>
@@ -67,6 +69,7 @@
 			</div>
 
 			<hr><br>
+			<pre>Prototype for voting system</pre>
 			<div ng-controller="incrementDecrementValue">
 				<p>Value: {{value}}</p> 
 				<button ng-click="incrementValue()">Add 1 to value</button>
