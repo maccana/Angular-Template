@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<title>Greyhound</title>
+	<!-- Angular and JS friends -->
+	<script type="text/javascript" src="js/angular/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<!-- Stylesheets-->
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+	<div id="top">
+		<h1>Angular ToDo list with filter</h1>
+	</div>
+
+	<div id="wrapper">
+		<!-- Grab JSON data from separate file via angular http service in app.js -->
+		<div ng-controller="Ctrl1">
+			<div id="searchDiv">
+				<label>Search:</label>
+				<input ng-model="query" id="search" type="search" placeholder="Search for item on the timetable"/><br>
+
+				<label>Filter by:
+					<select ng-model="itemOrder">
+						<option value="name">Name<option>
+						<option value="time">Time<option>
+					</select>
+				</label>
+				<label>
+					<input type="radio" ng-model="direction" name="direction" checked>
+					ascending			
+				</label>
+				<label>
+					<input type="radio" ng-model="direction" name="direction" value="reverse">
+					descending
+				</label>	
+				
+
+			</div><!-- search -->
+			<h1>ToDos</h1>
+			<ul>
+				<li ng-repeat="item in items | filter: query | orderBy: itemOrder:direction">
+					<span><img ng-src="{{item.image}}.jpg" width="10%"></span>
+					<!--<span id="num">{{item.num}}. </span>-->
+					<span id="name"><p>{{item.name}}</p></span>
+					<span id="time"><p>{{item.time}}</p></span>
+
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
