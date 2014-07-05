@@ -11,6 +11,9 @@ li {
 	color:blue;
 	min-height: 108px;
 }
+li .last {
+	border-bottom:none;
+}
 body {
 	font-family: helvetica;
 	background-color: #f7f7f7;
