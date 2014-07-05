@@ -1,1 +1,1 @@
-Angularjs template application.
+Angular tutorials and templates.
