@@ -1,4 +1,5 @@
-var app = angular.module('hello', []) 
+var app = angular.module('templates', []) 
+
 		.controller('TextAreaWithLimitCtrl', function($scope){
 			$scope.remaining = function () {
 			return MAX_LEN - $scope.message.length;
@@ -90,7 +91,7 @@ var app = angular.module('hello', [])
 			};
 
 
-		})	
+		});
 
 
 
