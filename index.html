@@ -34,9 +34,10 @@
 					set up in the $stateProvider function to inject individual partial view files
 					into the page. See this <a href="https://egghead.io/lessons/angularjs-introduction-ui-router"> egghead tutorial </a>.</p>
 					<p>Fix required to delay initial page load until the dynamic content is already available.</p>
-				<ul>
+				<ul id="main-menu">
 					<li><button><a href="#/home">Show ui-view Home partial</a></button></li>
 					<li><button><a href="#/contact">Show ui-view Contact partial</a></button></li>
+					<li><button><a href="#/list">Show list</a></button></li>
 				</ul>
 
 				<div ui-view><!-- Partials dynamically inserted here when menu link is clicked --></div>
