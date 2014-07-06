@@ -1,3 +1,4 @@
+/* Global styles */
 #page-wrapper {
 	width:80%;
 	margin:auto;
@@ -14,5 +15,39 @@
 }
 img {
 	width:100%;
+}
 
+/* Angular-UI-Router section styles */
+#ngUIRouterDemo {
+	padding:10px;
+}
+#ngUIRouterDemo p{
+	text-align: left;
+}
+#ngUIRouterDemo {
+	border:1px solid #555;
+	min-height: 380px;
+}
+#ngUIRouterDemo ul {
+	margin-left: -40px;
+}
+#ngUIRouterDemo ul li a{
+	text-decoration: none;
+}
+#main-menu li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+/* Shopping list style */
+.list ul {
+	margin-left: 0px !important;
+	width:50%;
+	background-color: #555;
+	color: #f1f1f1;
+}
+.list li {
+	display:block;
+	font-size:20px; 
+	padding:3px;
 }
