@@ -25,9 +25,27 @@
 
 			<hr>
 			<br>
+
+			<!-- Example using UI View and angular-ui-route.js -->
+			<div id="ngUIRouterDemo">
+				<h2>Angular-UI-Router example</h2>
+				<p>This example shows how to dynamically change the content displayed inside a ui-view
+					div element. It uses the 'ui.router' dependency in the app.js and several routes
+					set up in the $stateProvider function to inject individual partial view files
+					into the page. See this <a href="https://egghead.io/lessons/angularjs-introduction-ui-router"> egghead tutorial </a>.</p>
+					<p>Fix required to delay initial page load until the dynamic content is already available.</p>
+				<ul>
+					<li><button><a href="#/home">Show ui-view Home partial</a></button></li>
+					<li><button><a href="#/contact">Show ui-view Contact partial</a></button></li>
+				</ul>
+
+				<div ui-view><!-- Partials dynamically inserted here when menu link is clicked --></div>
+			</div>
+			<!-- End UI View example -->
+
 			<div>
 				<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
-				<!-- using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
+				<!-- Using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
 				<ul ng-controller="WorldCtrl"> 
 					<li ng-repeat="country in countries">
 						{{country.name}} has population of {{country.population}},

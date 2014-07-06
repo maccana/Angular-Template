@@ -1,4 +1,22 @@
-var app = angular.module('templates', []) 
+// Initialize app module - place app dependencies inside array
+var app = angular.module('templates', [
+			'ui.router'
+		]) 
+		.config(function ($stateProvider, $urlRouterProvider){
+
+			$stateProvider
+				.state('home', {
+					url : '/home',
+					templateUrl: 'partials/home.html'
+
+				})
+				.state('contact', {
+					url : '/contact',
+					templateUrl: 'partials/contact.html'
+
+				});
+
+		})
 
 		.controller('TextAreaWithLimitCtrl', function($scope){
 			$scope.remaining = function () {
