@@ -14,8 +14,25 @@ var app = angular.module('templates', [
 					url : '/contact',
 					templateUrl: 'partials/contact.html'
 
+				})
+				.state('list', {
+					url : '/list',
+					templateUrl: 'partials/list.html',
+					controller: 'listCtrl'
+
 				});
 
+
+		})
+		.controller('listCtrl', function($scope){
+			$scope.shoppingList = [
+				{name: "Milk"},
+				{name: "Biscuits"},
+				{name: "Tea"},
+				{name: "Bread"},
+				{name: "Beer"},
+
+			]
 		})
 
 		.controller('TextAreaWithLimitCtrl', function($scope){
