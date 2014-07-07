@@ -1,6 +1,7 @@
 // Initialize app module - place app dependencies inside array
 var app = angular.module('templates', [
-			'ui.router'
+			'ui.router',
+			'ui.bootstrap'
 		]) 
 		.config(function ($stateProvider, $urlRouterProvider){
 
@@ -20,19 +21,26 @@ var app = angular.module('templates', [
 					templateUrl: 'partials/list.html',
 					controller: 'listCtrl'
 
-				});
+				})
+				.state('list.item', {
+					url : '/:item',
+					templateUrl: 'partials/list.item.html',
+					controller: function ($scope, $stateParams) {
+						$scope.item = $stateParams.item;
+					}
+				})
 
 
 		})
 		.controller('listCtrl', function($scope){
 			$scope.shoppingList = [
-				{name: "Milk"},
-				{name: "Biscuits"},
-				{name: "Tea"},
-				{name: "Bread"},
-				{name: "Beer"},
+				{name: "French"},
+				{name: "Guitar"},
+				{name: "Jog"},
+				{name: "Wine"},
+				{name: "Angular"},
 
-			]
+			];
 		})
 
 		.controller('TextAreaWithLimitCtrl', function($scope){
@@ -40,6 +48,24 @@ var app = angular.module('templates', [
 			return MAX_LEN - $scope.message.length;
 			};
 		})
+
+		app.directive("myWidget",function(){
+			var linkFunction = function(scope, element, attributes) {
+		
+				var paragraph = element.children()[0];
+				$(paragraph).on("click", function() {
+
+					$(this).css({ "background-color": "red" });
+				});
+			};
+			return {
+				restrict: "E",
+				link: linkFunction
+				
+			};
+
+
+		});
 
 
 		var WorldCtrl = function ($scope) { 
@@ -110,23 +136,7 @@ var app = angular.module('templates', [
 			}
 		}
 		
-		app.directive("myWidget",function(){
-			var linkFunction = function(scope, element, attributes) {
-		
-				var paragraph = element.children()[0];
-				$(paragraph).on("click", function() {
 
-					$(this).css({ "background-color": "red" });
-				});
-			};
-			return {
-				restrict: "E",
-				link: linkFunction
-				
-			};
-
-
-		});
 
 
 

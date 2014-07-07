@@ -17,7 +17,7 @@ img {
 	width:100%;
 }
 
-/* Angular-UI-Router section styles */
+/* -------------------------- Angular-UI-Router section styles */
 #ngUIRouterDemo {
 	padding:10px;
 }
@@ -25,11 +25,14 @@ img {
 	text-align: left;
 }
 #ngUIRouterDemo {
-	border:1px solid #555;
-	min-height: 380px;
+	min-height: 490px;
+	padding:10px !important;
+	height: auto;
 }
+/* Top menu buttons */
 #ngUIRouterDemo ul {
 	margin-left: -40px;
+	margin-bottom: 30px;
 }
 #ngUIRouterDemo ul li a{
 	text-decoration: none;
@@ -39,15 +42,34 @@ img {
 	margin-right: 20px;
 }
 
-/* Shopping list style */
+/* -------------------------------------  Shopping list style */
+
+.items-block {
+
+	overflow: hidden;
+	width: 100px;
+	margin-right: 50px;
+	float:left;
+}
+/*.list {
+	min-height: auto !important;
+	overflow: hidden;
+}
 .list ul {
 	margin-left: 0px !important;
-	width:50%;
+
 	background-color: #555;
 	color: #f1f1f1;
 }
-.list li {
+.list a {
 	display:block;
 	font-size:20px; 
 	padding:3px;
+	width: 20%;
+	
+}*/
+.img-responsive {
+	width:25%;
+	float:left;
+	
 }

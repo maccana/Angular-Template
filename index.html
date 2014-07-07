@@ -2,31 +2,44 @@
 <html ng-app='templates'> 
 
 <head>
-
-<!-- normalize -->
-<link rel="stylesheet" href="styles/normalize.css">	
-<link rel="stylesheet" href="styles/style.css">	
-<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
-<script src="jquery/jquery.js"></script>
-<script src="angular/angular.js"></script>
-<script src="js/angular-ui-router.min.js"></script>
-
-
-
+	<!-- normalize -->
+	<link rel="stylesheet" href="styles/normalize.css">	
+	<link rel="stylesheet" href="styles/style.css">	
+	<link rel="stylesheet" href="styles/bootstrap-3.2.0/css/bootstrap.css">
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
+	<script src="jquery/jquery.js"></script>
+	<script src="angular/angular.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/ui-bootstrap.js"></script>
 </head>
+
 <body ng-init="greeting = {name : 'Angular'}"> 
 	<div id="page-wrapper">
-		<div id="main">
-			<div>
-				<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.</p>
-				Say hello to: <input type="text" ng-model="greeting.name">
-				<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1>
+		<!-- Top -->
+		<div id="page-header">
+
+			<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+			<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.<br>
+			Type in text field to change the header greeting.</p>
+
+			<!-- Example -->
+			<div class="well">
+				<p>Hello, <input type="text" ng-model="greeting.name"></p> 
 			</div>
+			<!-- Example -->
+			<div class="well" ng-controller="toggleImage">
+				<!-- toggle image show / hide -->	
+				<p>Example <b>ng-click</b> directive to call toogle() function in toggleImage controller.</p>
+				<button id="toggle-btn" class="btn btn-default" ng-click="toggle()">Hide Image</button>
+				
+				<div id="image-container">
+					<img ng-show="visible" src="img/angularjs-logo.png">
+				</div>
+			</div>
+		</div>
 
-			<hr>
-			<br>
-
-			<!-- Example using UI View and angular-ui-route.js -->
+		<!-- Example using UI View and angular-ui-route.js -->
+		<div class="well">
 			<div id="ngUIRouterDemo">
 				<h2>Angular-UI-Router example</h2>
 				<p>This example shows how to dynamically change the content displayed inside a ui-view
@@ -35,15 +48,18 @@
 					into the page. See this <a href="https://egghead.io/lessons/angularjs-introduction-ui-router"> egghead tutorial </a>.</p>
 					<p>Fix required to delay initial page load until the dynamic content is already available.</p>
 				<ul id="main-menu">
-					<li><button><a href="#/home">Show ui-view Home partial</a></button></li>
-					<li><button><a href="#/contact">Show ui-view Contact partial</a></button></li>
-					<li><button><a href="#/list">Show list</a></button></li>
+					<li><button class="btn btn-default"><a href="#/home">Show ui-view Home partial</a></button></li>
+					<li><button class="btn btn-default"><a href="#/contact">Show ui-view Contact partial</a></button></li>
+					<li><button class="btn btn-default"><a href="#/list">Show list</a></button></li>
 				</ul>
 
 				<div ui-view><!-- Partials dynamically inserted here when menu link is clicked --></div>
 			</div>
-			<!-- End UI View example -->
+		</div><!-- End UI View example -->
 
+		<!-- Example -->
+		<div class="well">
+			<h3>ng-repeat</h3>
 			<div>
 				<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
 				<!-- Using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
@@ -52,28 +68,22 @@
 						{{country.name}} has population of {{country.population}},
 						{{worldsPercentage(country.population)}} % of the World's
 						population </li>
-					<hr>
-					World's population: {{population}} million
+					<li>World population: {{population}} million</li>
 				</ul>
-			</div><br>
-			<hr><br><br>
-			<!-- toggle image show / hide -->	
-			<div ng-controller="toggleImage">
-				<button id="toggle-btn" ng-click="toggle()">Hide Image</button>
-				<p id="pText" ng-show="visible">The official Angularjs logo</p>
-				<div id="image-container">
-					<img ng-show="visible" src="img/angularjs-logo.png">
-				</div>
 			</div>
-			<br><br>
-			<hr>
-			<br>
+		</div>
+
+		<!-- Example -->
+		<div class="well">
+			<h3>ng-model and ng-disabled</h3>
 			<p>Click check box to disable / enable button</p>
 			<pre>Prototype for enable disable settings for profile</pre>
 			<label><input type="checkbox" ng-model="checked"/>Toggle Button</label> 
 			<button ng-disabled="checked">Press me</button>
 			<br><br>
 			<hr>
+			<b><h3>To do</h3></b>
+			<p>Text area with character limit and modal alert.</p>
 			<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
 				<div class="row">
 					<textarea ng-model="message">{{message}}</textarea> 
@@ -83,7 +93,10 @@
 					<button ng-click="clear()">Clear</button>
 				</div>
 			</div>
-			<hr><br>
+		</div>
+
+		<!-- Example -->
+		<div class="well">
 			<p>Input your name to see greeting. Clear input to remove greeting again.</p>
 			<div ng-controller="addRemoveGreetingCtrl"> 
 				<input type="text" ng-model="name" placeholder="Enter your name"> 
@@ -97,7 +110,10 @@
 				<button ng-click="decrementValue()">Subtract 1 from value</button>
 				<button ng-click="resetValue()">Reset</button>
 			</div>
-			<hr>
+		</div>
+
+		<!-- Example -->
+		<div class="well">
 			<pre>Selecting song elements from array defined in controller via checkbox filter</pre>
 			<div ng-controller="playlistCtrl">
 			   <legend>Select songs to play</legend>
@@ -107,18 +123,20 @@
 			</label>
 			    {{playList}}
 			</div>
-			<hr>
+		</div>
+
+		<!-- Example -->
+		<div class="well">
 			<!-- custom directive -->
 			<pre>Prototype widget directive</pre>
 			<my-widget>
 				<p>Hello World</p> 
 			</my-widget>
 		</div>
-	</div>
+
+	</div><!-- end page wrapper -->
 </body> 
 
 <!-- angular app module -->
 <script type="text/javascript" src="app/app.js"></script>
-
-
 </html>
