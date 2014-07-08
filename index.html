@@ -14,126 +14,139 @@
 </head>
 
 <body ng-init="greeting = {name : 'Angular'}"> 
-	<div id="page-wrapper">
-		<!-- Top -->
-		<div id="page-header">
 
-			<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
-			<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.<br>
-			Type in text field to change the header greeting.</p>
+	<div id="page-wrapper">
+		<div class="left-menu">
+
+		<ul class="nav nav-stacked">
+			<li><a href="">item</a></li>
+			<li><a href="">item</a></li>
+			<li><a href="">item</a></li>
+			<li><a href="">item</a></li>
+		</ul>
+			
+		</div>
+
+		<div class="col-xs-9">
+			<!-- Top -->
+		<!-- 	<div id="page-header"> -->
+
+				<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+				<p>This input box uses the <b>'ng-model'</b> directive inside the input tag to assign the name below via two-way binding.<br>
+				Type in text field to change the header greeting.</p>
+
+				<!-- Example -->
+				<div class="well">
+					<p>Hello, <input type="text" ng-model="greeting.name"></p> 
+				</div>
+				<!-- Example -->
+				<div class="well" ng-controller="toggleImage">
+					<!-- toggle image show / hide -->	
+					<p>Example <b>ng-click</b> directive to call toogle() function in toggleImage controller.</p>
+					<button id="toggle-btn" class="btn btn-default" ng-click="toggle()">Hide Image</button>
+					
+					<div id="image-container">
+						<img ng-show="visible" src="img/angularjs-logo.png">
+					</div>
+				</div>
+		<!-- 	</div> -->
+
+			<!-- Example using UI View and angular-ui-route.js -->
+			<div class="well">
+				<div id="ngUIRouterDemo">
+					<h2>Angular-UI-Router example</h2>
+					<p>This example shows how to dynamically change the content displayed inside a ui-view
+						div element. It uses the 'ui.router' dependency in the app.js and several routes
+						set up in the $stateProvider function to inject individual partial view files
+						into the page. See this <a href="https://egghead.io/lessons/angularjs-introduction-ui-router"> egghead tutorial </a>.</p>
+						<p>Fix required to delay initial page load until the dynamic content is already available.</p>
+					<ul id="main-menu">
+						<li><button class="btn btn-default"><a href="#/home">Show ui-view Home partial</a></button></li>
+						<li><button class="btn btn-default"><a href="#/contact">Show ui-view Contact partial</a></button></li>
+						<li><button class="btn btn-default"><a href="#/list">Show list</a></button></li>
+					</ul>
+
+					<div ui-view><!-- Partials dynamically inserted here when menu link is clicked --></div>
+				</div>
+			</div><!-- End UI View example -->
 
 			<!-- Example -->
 			<div class="well">
-				<p>Hello, <input type="text" ng-model="greeting.name"></p> 
+				<h3>ng-repeat</h3>
+				<div>
+					<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
+					<!-- Using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
+					<ul ng-controller="WorldCtrl"> 
+						<li ng-repeat="country in countries">
+							{{country.name}} has population of {{country.population}},
+							{{worldsPercentage(country.population)}} % of the World's
+							population </li>
+						<li>World population: {{population}} million</li>
+					</ul>
+				</div>
 			</div>
+
 			<!-- Example -->
-			<div class="well" ng-controller="toggleImage">
-				<!-- toggle image show / hide -->	
-				<p>Example <b>ng-click</b> directive to call toogle() function in toggleImage controller.</p>
-				<button id="toggle-btn" class="btn btn-default" ng-click="toggle()">Hide Image</button>
-				
-				<div id="image-container">
-					<img ng-show="visible" src="img/angularjs-logo.png">
+			<div class="well">
+				<h3>ng-model and ng-disabled</h3>
+				<p>Click check box to disable / enable button</p>
+				<pre>Prototype for enable disable settings for profile</pre>
+				<label><input type="checkbox" ng-model="checked"/>Toggle Button</label> 
+				<button ng-disabled="checked">Press me</button>
+				<br><br>
+				<hr>
+				<b><h3>To do</h3></b>
+				<p>Text area with character limit and modal alert.</p>
+				<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
+					<div class="row">
+						<textarea ng-model="message">{{message}}</textarea> 
+					</div>
+					<div class="row"> 
+						<button ng-click="send()">Send</button> 
+						<button ng-click="clear()">Clear</button>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- Example using UI View and angular-ui-route.js -->
-		<div class="well">
-			<div id="ngUIRouterDemo">
-				<h2>Angular-UI-Router example</h2>
-				<p>This example shows how to dynamically change the content displayed inside a ui-view
-					div element. It uses the 'ui.router' dependency in the app.js and several routes
-					set up in the $stateProvider function to inject individual partial view files
-					into the page. See this <a href="https://egghead.io/lessons/angularjs-introduction-ui-router"> egghead tutorial </a>.</p>
-					<p>Fix required to delay initial page load until the dynamic content is already available.</p>
-				<ul id="main-menu">
-					<li><button class="btn btn-default"><a href="#/home">Show ui-view Home partial</a></button></li>
-					<li><button class="btn btn-default"><a href="#/contact">Show ui-view Contact partial</a></button></li>
-					<li><button class="btn btn-default"><a href="#/list">Show list</a></button></li>
-				</ul>
-
-				<div ui-view><!-- Partials dynamically inserted here when menu link is clicked --></div>
-			</div>
-		</div><!-- End UI View example -->
-
-		<!-- Example -->
-		<div class="well">
-			<h3>ng-repeat</h3>
-			<div>
-				<p>This block uses the <b>ng-repeat</b> directive to populate a list with variable value and json data on the <b>$scope</b> object of <b>WorldCtrl</b> controller</p>
-				<!-- Using ng-repeat to populate ul from variable value and json data on the scope of WorldCtrl function -->
-				<ul ng-controller="WorldCtrl"> 
-					<li ng-repeat="country in countries">
-						{{country.name}} has population of {{country.population}},
-						{{worldsPercentage(country.population)}} % of the World's
-						population </li>
-					<li>World population: {{population}} million</li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- Example -->
-		<div class="well">
-			<h3>ng-model and ng-disabled</h3>
-			<p>Click check box to disable / enable button</p>
-			<pre>Prototype for enable disable settings for profile</pre>
-			<label><input type="checkbox" ng-model="checked"/>Toggle Button</label> 
-			<button ng-disabled="checked">Press me</button>
-			<br><br>
-			<hr>
-			<b><h3>To do</h3></b>
-			<p>Text area with character limit and modal alert.</p>
-			<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
-				<div class="row">
-					<textarea ng-model="message">{{message}}</textarea> 
+			<!-- Example -->
+			<div class="well">
+				<p>Input your name to see greeting. Clear input to remove greeting again.</p>
+				<div ng-controller="addRemoveGreetingCtrl"> 
+					<input type="text" ng-model="name" placeholder="Enter your name"> 
+					<p>{{text}}</p>
 				</div>
-				<div class="row"> 
-					<button ng-click="send()">Send</button> 
-					<button ng-click="clear()">Clear</button>
+				<hr><br>
+				<pre>Prototype for voting system</pre>
+				<div ng-controller="incrementDecrementValue">
+					<p>Value: {{value}}</p> 
+					<button ng-click="incrementValue()">Add 1 to value</button>
+					<button ng-click="decrementValue()">Subtract 1 from value</button>
+					<button ng-click="resetValue()">Reset</button>
 				</div>
 			</div>
-		</div>
 
-		<!-- Example -->
-		<div class="well">
-			<p>Input your name to see greeting. Clear input to remove greeting again.</p>
-			<div ng-controller="addRemoveGreetingCtrl"> 
-				<input type="text" ng-model="name" placeholder="Enter your name"> 
-				<p>{{text}}</p>
+			<!-- Example -->
+			<div class="well">
+				<pre>Selecting song elements from array defined in controller via checkbox filter</pre>
+				<div ng-controller="playlistCtrl">
+				   <legend>Select songs to play</legend>
+				<label ng-repeat="song in selectedAlbumSongs">
+				    <input type="checkbox" name="{{song.url}}" id="{{song.name}}" ng-model="song.checked" ng-change="selectedSongs()">
+				    <label for="{{song.name}}">{{song.name}}</label>
+				</label>
+				    {{playList}}
+				</div>
 			</div>
-			<hr><br>
-			<pre>Prototype for voting system</pre>
-			<div ng-controller="incrementDecrementValue">
-				<p>Value: {{value}}</p> 
-				<button ng-click="incrementValue()">Add 1 to value</button>
-				<button ng-click="decrementValue()">Subtract 1 from value</button>
-				<button ng-click="resetValue()">Reset</button>
-			</div>
-		</div>
 
-		<!-- Example -->
-		<div class="well">
-			<pre>Selecting song elements from array defined in controller via checkbox filter</pre>
-			<div ng-controller="playlistCtrl">
-			   <legend>Select songs to play</legend>
-			<label ng-repeat="song in selectedAlbumSongs">
-			    <input type="checkbox" name="{{song.url}}" id="{{song.name}}" ng-model="song.checked" ng-change="selectedSongs()">
-			    <label for="{{song.name}}">{{song.name}}</label>
-			</label>
-			    {{playList}}
+			<!-- Example -->
+			<div class="well">
+				<!-- custom directive -->
+				<pre>Prototype widget directive</pre>
+				<my-widget>
+					<p>Hello World</p> 
+				</my-widget>
 			</div>
 		</div>
-
-		<!-- Example -->
-		<div class="well">
-			<!-- custom directive -->
-			<pre>Prototype widget directive</pre>
-			<my-widget>
-				<p>Hello World</p> 
-			</my-widget>
-		</div>
-
 	</div><!-- end page wrapper -->
 </body> 
 
