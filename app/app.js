@@ -33,7 +33,7 @@ var app = angular.module('templates', [
 
 		})
 		.controller('listCtrl', function($scope){
-			$scope.shoppingList = [
+			$scope.itemList = [
 				{name: "French"},
 				{name: "Guitar"},
 				{name: "Jog"},
