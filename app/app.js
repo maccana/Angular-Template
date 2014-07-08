@@ -29,6 +29,24 @@ var app = angular.module('templates', [
 						$scope.item = $stateParams.item;
 					}
 				})
+				.state('toggle', {
+					url : '/toggle',
+					templateUrl: 'partials/toggle.html',
+					controller:	function toggleImage($scope){
+						$scope.visible = true; 
+						$scope.toggle = function() {
+							btn = document.getElementById('toggle-btn');
+								if(btn.innerHTML == 'Show Image') {
+									btn.innerHTML = 'Hide Image';
+
+								} 
+								else 
+								btn.innerHTML = 'Show Image';
+								$scope.visible = !$scope.visible;
+
+						}
+					}
+				})
 
 
 		})
@@ -121,20 +139,6 @@ var app = angular.module('templates', [
 		}
 
 	
-		function toggleImage($scope){
-			$scope.visible = true; 
-			$scope.toggle = function() {
-				btn = document.getElementById('toggle-btn');
-					if(btn.innerHTML == 'Show Image') {
-						btn.innerHTML = 'Hide Image';
-
-					} 
-					else 
-						btn.innerHTML = 'Show Image';
-						$scope.visible = !$scope.visible;
-
-			}
-		}
 		
 
 
