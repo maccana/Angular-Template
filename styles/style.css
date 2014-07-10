@@ -1,11 +1,25 @@
 /* Global styles */
+
 #page-wrapper {
 	width:80%;
-	margin:auto;
+	margin: auto;
+	border: 1px solid red;
+}
+.content {
+	position: relative;
+	overflow: hidden;
 }
 #main {
-	padding: 20px;
-	margin-top:50px;
+	padding: 0px;
+	margin-top:0px;
+}
+header {
+	margin-bottom:20px;
+}
+header h1 {
+	font-family: helvetica;
+	font-weight: 200;
+
 }
 #image-container {
 	width:50%;
@@ -18,13 +32,12 @@ img {
 }
 /* Main Left Menu */
 .left-menu {
-	margin-top: 75px;
+	margin-top: 0px;
 	border: 1px solid #e1e1e1;
-
 	padding: 0px;
 	overflow: hidden;
 	width:140px;
-	margin-right: 20px;
+	margin-right: 12px;
 	float:left;
 }
 .left-menu ul {
@@ -35,9 +48,6 @@ img {
 
 }
 /* -------------------------- Angular-UI-Router section styles */
-#ngUIRouterDemo {
-	padding:10px;
-}
 #ngUIRouterDemo p{
 	text-align: left;
 }
