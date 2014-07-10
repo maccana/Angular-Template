@@ -13,28 +13,34 @@
 	<script src="js/ui-bootstrap.js"></script>
 </head>
 
-<body ng-init="greeting = {name : 'Angular'}"> 
+<body ng-init="greeting = {name : 'Angular'}"><!-- init greeting.name to value 'Angular' -->
 	<!-- wrapper -->
 	<div id="page-wrapper">
-		<!-- main tutorial nav -->
-		<div class="left-menu">
-			<ul class="nav nav-stacked">
-				<li><a href="#/home">Home</a></li>
-				<li><a href="#/list">List</a></li>
-				<li><a href="#/contact">Contact</a></li>
-				<li><a href="#/toggle">Toggle Image</a></li>
-			</ul>	
+		<header>	
+			<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+		</header>
+		<div class="content">
+			<!-- main tutorial nav -->
+			<div class="left-menu">
+				<ul class="nav nav-stacked">
+					<li><a href="#/home">Home</a></li>
+					<li><a href="#/list">List</a></li>
+					<li><a href="#/contact">Contact</a></li>
+					<li><a href="#/toggle">Toggle Image</a></li>
+					<li><a href="#/todo">Todo</a></li>
+				</ul>	
+			</div>
+
+			<!-- main section -->
+			<div class="col-xs-10" id="main">
+				<div class="well">
+					<div id="ngUIRouterDemo">
+						<div ui-view><!-- Partials dynamically inserted here when menu link is clicked -->
+						</div>
+					</div>	
+				</div><!-- end well -->		
+			</div><!-- end main -->	
 		</div>
-		<!-- main section -->
-		<div class="col-xs-9" id="main">
-			<div class="well">
-				<div id="ngUIRouterDemo">
-					<div ui-view><!-- Partials dynamically inserted here when menu link is clicked -->
-					</div>
-				</div>	
-			</div><!-- end well -->		
-		</div><!-- end main -->	
-		
 	</div><!-- end page wrapper -->
 </body> 
 
