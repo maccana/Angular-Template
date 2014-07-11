@@ -1,16 +1,13 @@
 <!DOCTYPE>
 <html ng-app='templates'> 
-
 <head>
 	<!-- normalize -->
 	<link rel="stylesheet" href="styles/normalize.css">	
+	<!-- stylesheets -->
 	<link rel="stylesheet" href="styles/style.css">	
 	<link rel="stylesheet" href="styles/bootstrap-3.2.0/css/bootstrap.css">
+	<!-- Javascript -->
 	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script> -->
-	<script src="jquery/jquery.js"></script>
-	<script src="angular/angular.js"></script>
-	<script src="js/angular-ui-router.min.js"></script>
-	<script src="js/ui-bootstrap.js"></script>
 </head>
 
 <body ng-init="greeting = {name : 'Angular'}"><!-- init greeting.name to value 'Angular' -->
@@ -42,8 +39,14 @@
 			</div><!-- end main -->	
 		</div>
 	</div><!-- end page wrapper -->
-</body> 
 
-<!-- angular app module -->
-<script type="text/javascript" src="app/app.js"></script>
+	<!-- angular app module -->
+	<script src="jquery/jquery.js"></script>
+	<script src="angular/angular.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/ui-bootstrap.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script src="js/directives/directives.js"></script>
+
+</body> 
 </html>
