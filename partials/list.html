@@ -1,38 +1,13 @@
 
 <div class="list">
 	<p>Select list item to display image.</p>
-	<div class="items-block">
+	<div ui-view class="col-md-8 list-image">
 		
-		<a class="list-group-item"
-		ng-repeat="item in itemList"
-		ng-class="{active: item.selected}"
-		ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
-
-
-	</div>	
-	<div ui-view class="col-xs-9"></div>
+	</div>
+		<div class="items-block">
+			<a class="list-group-item"
+			ng-repeat="item in itemList"
+			ng-class="{active: item.selected}"
+			ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
+		</div>	
 </div>
-
-
-<!--
-
-https://www.google.com/search?q=create+a+sliding+image+gallery+in+drupal+7&oq=create+a+sliding+image+gallery+in+drupal+7&aqs=chrome..69i57.22251j0j1&sourceid=chrome&es_sm=91&ie=UTF-8#q=create+a+sliding+thumbnail+image+gallery+in+drupal+7&safe=off
-
-http://merbist.com/2010/01/17/controlling-itunes-with-macruby/
-
-http://www.tutorialsavvy.com/2013/08/integrating-bootstrap-ui-with-angularjs.html
-
-http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-i-the-fundamentals
-
-https://www.youtube.com/watch?v=TRrL5j3MIvo&feature=youtu.be
-
-https://www.youtube.com/watch?v=XUx8O2dWn4Q
-
-http://demo.ufothemes.com/interstellar/
-http://ufothemes.com/themes/interstellar/
-
-
-https://www.youtube.com/results?search_query=sublime+text+2+snippets
-http://joshnh.com/2012/11/27/a-set-of-html-snippets-for-sublime-text-2/
-
--->
