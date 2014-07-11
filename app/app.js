@@ -1,7 +1,11 @@
-// Initialize app module - place app dependencies inside array
-var app = angular.module('templates', [
+'use strict';
+
+/* App Module - Place app dependencies inside array */
+
+angular.module('templates', [
 			'ui.router',
-			'ui.bootstrap'
+			'ui.bootstrap',
+			'MyComponents'
 		]) 
 		.config(function ($stateProvider, $urlRouterProvider){
 
@@ -35,21 +39,24 @@ var app = angular.module('templates', [
 					controller:	function toggleImage($scope){
 						$scope.visible = true; 
 						$scope.toggle = function() {
-							btn = document.getElementById('toggle-btn');
+							var btn = document.getElementById('toggle-btn');
 								if(btn.innerHTML == 'Show Image') {
 									btn.innerHTML = 'Hide Image';
-
 								} 
 								else 
 								btn.innerHTML = 'Show Image';
 								$scope.visible = !$scope.visible;
-
 						}
 					}
+				})
+				.state('todo', {
+					url: '/todo',
+					templateUrl: 'partials/todo.html',
 				})
 
 
 		})
+
 		.controller('listCtrl', function($scope){
 			$scope.itemList = [
 				{name: "French"},
@@ -61,30 +68,12 @@ var app = angular.module('templates', [
 			];
 		})
 
+		/* Text area with limit to be implemented */
 		.controller('TextAreaWithLimitCtrl', function($scope){
 			$scope.remaining = function () {
 			return MAX_LEN - $scope.message.length;
 			};
 		})
-
-		app.directive("myWidget",function(){
-			var linkFunction = function(scope, element, attributes) {
-		
-				var paragraph = element.children()[0];
-				$(paragraph).on("click", function() {
-
-					$(this).css({ "background-color": "red" });
-				});
-			};
-			return {
-				restrict: "E",
-				link: linkFunction
-				
-			};
-
-
-		});
-
 
 		var WorldCtrl = function ($scope) { 
 			$scope.population = 7000; 
@@ -99,6 +88,7 @@ var app = angular.module('templates', [
 			}	
 		}
 
+		/* Prototype for dynamic interactive audio playlist */		
 		var playlistCtrl = function($scope,$filter) {
 			$scope.selectedAlbumSongs = [
 				{'name': 'song1', 'url': 'http://test/song1.mp3' },
@@ -113,7 +103,6 @@ var app = angular.module('templates', [
 
 		var addRemoveGreetingCtrl = function ($scope) {
 			$scope.name = "";
-
 			$scope.$watch("name", function(newValue, oldValue){
 				if ($scope.name.length > 0) {
 					$scope.text = "Greetings " + $scope.name;
@@ -122,7 +111,7 @@ var app = angular.module('templates', [
 			});
 		} 
 
-		/* alternative syntax for controller function */
+		/* Alternative syntax for controller function */
 		function incrementDecrementValue($scope){ 
 			$scope.value = 1;
 				$scope.incrementValue = function(value) { 
@@ -137,6 +126,7 @@ var app = angular.module('templates', [
 
 				}
 		}
+
 
 	
 		
