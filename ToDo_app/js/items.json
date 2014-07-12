@@ -1,9 +1,15 @@
 
 [
-	{"num":"1","name":"Have lunch","time":"1pm","image":"img/lunch"},
-	{"num":"2","name":"Walk dog","time":"8pm","image":"img/dog"},
-	{"num":"3","name":"Play guitar","time":"3pm","image":"img/guitar"},
-	{"num":"4","name":"Learn Angular","time":"5pm","image":"img/angular"},
-	{"num":"5","name":"CxWebsite","time":"7pm","image":"img/book"}
+	{"task":"1","text":"Have lunch","done": "false"},
+
+	{"task":"2","text":"Walk dog","done": "false"},
+
+	{"task":"3","text":"Play guitar","done": "false"},
+
+	{"task":"4","text":"Learn Angular","done": "false"},
+
+	{"task":"5","text":"CxWebsite","done": "false"},
+
+	{"task":"6","text":"Check WebAudio in projects folder","done": "false"}
 ]
 	
