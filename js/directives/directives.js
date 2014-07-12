@@ -12,6 +12,7 @@ angular.module('MyComponents', [])
 					element.select();
 				})
 			}}})
+	
 	.directive('defaultButton', function() {
 		return {
 			restrict: 'E',
