@@ -1,9 +1,13 @@
 /* Global styles */
-
+#test {
+	width: 150px;
+	height:50px;
+	border:1 px solid red;
+}
 #page-wrapper {
 	width:80%;
 	margin: auto;
-	border: 1px solid red;
+	border: 0px solid red;
 }
 .content {
 	position: relative;
@@ -19,7 +23,6 @@ header {
 header h1 {
 	font-family: helvetica;
 	font-weight: 200;
-
 }
 #image-container {
 	width:50%;
@@ -29,6 +32,9 @@ header h1 {
 }
 img {
 	width:100%;
+}
+.list-image {
+	min-height: 200px !important;padding: 20px;
 }
 /* Main Left Menu */
 .left-menu {
@@ -69,7 +75,7 @@ img {
 	margin-right: 20px;
 }
 
-/* -------------------------------------  Shopping list style */
+/* -------------------------------------  Shopping list style ------------------------------------- */
 
 .items-block {
 
@@ -99,4 +105,12 @@ img {
 	width:25%;
 	float:left;
 	
+}
+/* --------------------------------------- Todo app style ---------------------------------------- */
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+.unstyled li {
+	list-style-type: none;
 }
