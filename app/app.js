@@ -142,20 +142,23 @@ var app = angular.module('templates', [
 			})
 
 			$scope.addTodo = function() {
-		    $scope.todos.push({text:$scope.todoText, done:false});
-		    $scope.todoText = '';
+		    	$scope.todos.push({text:$scope.todoText, done:false});
+		    	$scope.todoText = '';
 		  	};
 		 
 		 
-	  	$scope.remaining = function() {
-		    var count = 0;
-		    angular.forEach($scope.todos, function(todo) {
-		      count += todo.done ? 0 : 1;
-		    });
-		    return count;
-	  	};
+	  		$scope.remaining = function() {
+		    	var count = 0;
+		    	angular.forEach($scope.todos, function(todo) {
+		      		count += todo.done ? 0 : 1;
+		    	});
+		    	return count;
+	  		};
+	  		$scope.removeTodo = function(index) {
+	  			$scope.todos.splice('index', 1);
+	  		};
 	 
-	  	$scope.archive = function() {
+	  		$scope.archive = function() {
 		    var oldTodos = $scope.todos;
 		    $scope.todos = [];
 		    angular.forEach(oldTodos, function(todo) {
