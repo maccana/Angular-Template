@@ -1,15 +1,21 @@
 'use strict';
 
 /* App Module - Place app dependencies inside array */
-angular.module('templates', [
+var app = angular.module('templates', [
 			'ui.router',
 			'ui.bootstrap',
-			'MyComponents'
+			'MyComponents',
+			'firebase'
 		]) 
 /* Configuration of ui-router to inject views into ui-view element in index.html */
 		.config(function ($stateProvider, $urlRouterProvider){
 
 			$stateProvider
+				.state('/', {
+					url : '/',
+					templateUrl : 'partials/login.html',
+					controller : 'loginCtrl'
+				})
 				.state('home', {
 					url : '/home',
 					templateUrl: 'partials/home.html'
@@ -54,9 +60,16 @@ angular.module('templates', [
 					templateUrl: 'partials/todo.html',
 					controller: 'TodoCtrl'
 				})
-
-
-
+				.state('firebase', {
+					url: '/firebase',
+					templateUrl: 'partials/firebase.html',
+					controller: 'firebaseCtrl'
+				})
+				.state('storage', {
+					url: '/storage',
+					templateUrl: 'partials/storage.html',
+					controller: 'MaintCtrl'
+				})
 		})
 
 /* CONTROLLERS */
@@ -72,11 +85,59 @@ angular.module('templates', [
 
 			];
 		})
+/* -------------------------------------------------------------- Login ctrl example ---------------- */	
+		.controller('loginCtrl', function($scope){ 
+			$scope.login = function(){
+				if($scope.loginForm.$valid) {
+					console.log('sending request....');
+				}
+			};
+
+		})
+/* -------------------------------------------------------------- Limited text area ctrl example ---- */		
+		/* Text area with limit to be implemented */
+		.controller('TextAreaWithLimitCtrl', function($scope){
+			$scope.remaining = function () {
+			return MAX_LEN - $scope.message.length;
+			};
+		})
+
+/* -------------------------------------------------------------- Storage ctrl example -------------- */
+		.controller("MaintCtrl", function(LS) {
+		  this.greeting = "This is a localstorage demo app";
+		  this.value = LS.getData();
+		  this.latestData = function() {
+		    return LS.getData();
+		  };
+		  this.update = function(val) {
+		    return LS.setData(val);
+		  };
+		})
+
+		.factory("LS", function($window, $rootScope) {
+			
+		  angular.element($window).on('storage', function(event) {
+		    if (event.key === 'my-storage') {
+		      $rootScope.$apply();
+		    }
+		  });
+		  return {
+		    setData: function(val) {
+		    	console.log("hello2");
+		      $window.localStorage && $window.localStorage.setItem('my-storage', val);
+		      return this;
+		    },
+		    getData: function() {
+		    	// console.log("hello");
+		      return $window.localStorage && $window.localStorage.getItem('my-storage');
+		    }
+		  };
+		});
 
 
 /* ------------------------------------------------------------------------- Todos ctrl example ---- */
 		function TodoCtrl($scope,$http) {
-		 	$http.get('js/items.json').success(function(data){
+		 	$http.get('js/TodoList.json').success(function(data){
 			$scope.todos = data;
 			})
 
@@ -102,14 +163,6 @@ angular.module('templates', [
 		    });
 		};
 	}
-
-/* -------------------------------------------------------------- Limited text area ctrl example ---- */		
-		/* Text area with limit to be implemented */
-		.controller('TextAreaWithLimitCtrl', function($scope){
-			$scope.remaining = function () {
-			return MAX_LEN - $scope.message.length;
-			};
-		})
 
 /* -------------------------------------------------------------------- Playlist ctrl example ------- */
 		/* Prototype for dynamic interactive audio playlist 
@@ -170,6 +223,13 @@ angular.module('templates', [
 
 				}
 		}
+
+/* ---------------------------------------------------------------------- Firebase ctrl example ---- */
+		function firebaseCtrl($scope, $firebase) { 
+			var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
+			$scope.messages = $firebase(ref);
+		}
+
 
 
 	
