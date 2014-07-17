@@ -1,14 +1,16 @@
 <!-- Simple Todo example -->
 
-<h2>Super Todo App</h2>
+<h2>Super Todo App</h2><br>
     <div ng-controller="TodoCtrl">
       <span>{{remaining()}} of {{todos.length}} tasks remaining</span>
       [ <a href="" ng-click="archive()">archive</a> ]
       <ul class="unstyled">
         <li ng-repeat="todo in todos">
-
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>
+              <span class="input-group-btn" style="float:;display:inline;margin:0px 0px auto;">
+    <button class="btn btn-xs btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+  </span>
         </li>
       </ul>
       <form ng-submit="addTodo()">
