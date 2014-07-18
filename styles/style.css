@@ -1,4 +1,9 @@
 /* Global styles */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 #test {
 	width: 150px;
 	height:50px;
@@ -112,4 +117,19 @@ img {
 }
 .unstyled li {
 	list-style-type: none;
+}
+
+/* --------------------------------------- Change CSS app style ---------------------------------- */
+
+.blue {
+    color:blue;
+}
+.red {
+	color:red;
+}
+.changeSize {
+	font-size:30px;
+}
+.italic {
+    font-style:italic;
 }
