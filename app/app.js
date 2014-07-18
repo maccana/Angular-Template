@@ -121,17 +121,10 @@ var app = angular.module('templates', [
 		})
 
 /* -------------------------------------------------------------- Storage ctrl example -------------- */
-<<<<<<< HEAD
 		.controller("MaintCtrl", function($scope, LS) {
 		  $scope.greeting = "Local storage demo app";
 		  $scope.value = LS.getData();
 		  $scope.latestData = function() {
-=======
-		.controller("MaintCtrl", function(LS) {
-		  this.greeting = "This is a localstorage demo app";
-		  this.value = LS.getData();
-		  this.latestData = function() {
->>>>>>> 02a0fac2876e28ae8fa0e2b0d2cd6fcf98356501
 		    return LS.getData();
 		  };
 		  this.update = function(val) {
