@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<title>ToDo List with Angularjs</title>
+	<!-- Angular and JS friends -->
+	<script type="text/javascript" src="js/angular/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<!-- Stylesheets-->
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="style/normalize.css">
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+
+
+</head>
+<body>
+	<div id="top">
+		<h1>Angular ToDo list with filter</h1>
+	</div>
+
+	<div id="wrapper">
+		<!-- Grab JSON data from separate file via angular http service in app.js -->
+		<div ng-controller="Ctrl1">
+			<div id="searchDiv">
+				<label>Search:</label>
+				<input ng-model="query" id="search" type="search" placeholder="Search for item on the timetable"/><br>
+
+				<label>Filter by:
+					<select ng-model="itemOrder">
+						<option value="name">Name<option>
+						<option value="time">Time<option>
+					</select>
+				</label>
+				<label>
+					<input type="radio" ng-model="direction" name="direction" checked>
+					ascending			
+				</label>
+				<label>
+					<input type="radio" ng-model="direction" name="direction" value="reverse">
+					descending
+				</label>	
+				
+
+			</div><!-- search -->
+
+			<h1>ToDos</h1>
+			<div class="container">
+				    <ul ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
+        				<li>
+            				<input type="checkbox" name="todo.done" ng:click="recalc()">
+            				<!-- updates the css class to done_true or done_false -->
+            				<span ng:class="'done_' + todo.done">{{todo.name}}</span>
+
+            				<span>{{todo.time}}</span>
+        				</li>
+    				</ul>
+		<!-- <ul ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
+				<li>
+				<!--<span><img ng-src="{{todo.image}}.jpg" width="10%"></span> -->
+				<!--<span id="num">{{item.num}}. </span>-->
+				<!-- <span id="name">{{todo.name}}</span> -->
+				<!-- <span id="time"><p>{{todo.time}}</p></span> -->
+			<!--</li> -->
+		<!--</ul> -->
+
+			</div>
+			<form>
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+		</div>
+	</div>
+</body>
+</html>

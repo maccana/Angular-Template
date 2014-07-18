@@ -1,0 +1,15 @@
+
+[
+	{"task":"1","text":"Have lunch","done": "false"},
+
+	{"task":"2","text":"Walk dog","done": "false"},
+
+	{"task":"3","text":"Play guitar","done": "false"},
+
+	{"task":"4","text":"Learn Angular","done": "false"},
+
+	{"task":"5","text":"CxWebsite","done": "false"},
+
+	{"task":"6","text":"Check WebAudio in projects folder","done": "false"}
+]
+	
