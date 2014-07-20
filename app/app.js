@@ -46,12 +46,12 @@ var app = angular.module('templates', [
 						$scope.visible = true; 
 						$scope.toggle = function() {
 							var btn = document.getElementById('toggle-btn');
-								if(btn.innerHTML == 'Show Image') {
-									btn.innerHTML = 'Hide Image';
-								} 
-								else 
-								btn.innerHTML = 'Show Image';
-								$scope.visible = !$scope.visible;
+							if(btn.innerHTML == 'Show Image') {
+								btn.innerHTML = 'Hide Image';
+							} 
+							else 
+							btn.innerHTML = 'Show Image';
+							$scope.visible = !$scope.visible;
 						}
 					}
 				})
@@ -60,36 +60,15 @@ var app = angular.module('templates', [
 					templateUrl: 'partials/todo.html',
 					controller: 'TodoCtrl'
 				})
-				.state('firebase', {
-					url: '/firebase',
-					templateUrl: 'partials/firebase.html',
-					controller: 'firebaseCtrl'
-				})
 				.state('storage', {
 					url: '/storage',
 					templateUrl: 'partials/storage.html',
 					controller: 'MaintCtrl'
 				})
-				.state('/css', {
-					url : '/css',
-					templateUrl : 'partials/changeCSS.html',
-					controller : 'cssCtrl'
-				})
+
 		})
 
 /* CONTROLLERS */
-/* -------------------------------------------------------------------------- CSS ctrl example ---- */
-		.controller('cssCtrl', function($scope){
-			/* itemList is bound to the list view via scope */
-			$scope.changeColor = function(color) {
-					$scope.color = color;
-					sessionStorage.setItem(color,color);
-					alert(color + " saved");
-			}
-
-		})
-
-
 
 /* -------------------------------------------------------------------------- List ctrl example ---- */
 		.controller('listCtrl', function($scope){
@@ -121,38 +100,36 @@ var app = angular.module('templates', [
 		})
 
 /* -------------------------------------------------------------- Storage ctrl example -------------- */
-		.controller("MaintCtrl", function($scope, LS) {
-		  $scope.greeting = "Local storage demo app";
-		  $scope.value = LS.getData();
-		  $scope.latestData = function() {
-		    return LS.getData();
-		  };
-		  this.update = function(val) {
-		    return LS.setData(val);
-		  };
-		})
+.controller("MaintCtrl", function($scope, LS) {
+  $scope.greeting = "Local storage demo app";
+  $scope.value = LS.getData();
+  $scope.latestData = function() {
+    return LS.getData();
+  };
+  this.update = function(val) {
+    return LS.setData(val);
+  };
+})
 
-		.factory("LS", function($window, $rootScope) {
-			
-		  angular.element($window).on('storage', function(event) {
-		    if (event.key === 'my-storage') {
-		      $rootScope.$apply();
-		    }
-		  });
-		  return {
-		    setData: function(val) {
-		    	console.log("hello2");
-		      $window.localStorage && $window.localStorage.setItem('my-storage', val);
-		      return this;
-		    },
-		    getData: function() {
-		    	// console.log("hello");
-		      return $window.localStorage && $window.localStorage.getItem('my-storage');
-		    }
-		  };
-		});
-
-
+.factory("LS", function($window, $rootScope) {
+	
+  angular.element($window).on('storage', function(event) {
+    if (event.key === 'my-storage') {
+      $rootScope.$apply();
+    }
+  });
+  return {
+    setData: function(val) {
+    	console.log("hello2");
+      $window.localStorage && $window.localStorage.setItem('my-storage', val);
+      return this;
+    },
+    getData: function() {
+    	// console.log("hello");
+      return $window.localStorage && $window.localStorage.getItem('my-storage');
+    }
+  };
+});
 /* ------------------------------------------------------------------------- Todos ctrl example ---- */
 		function TodoCtrl($scope,$http) {
 		 	$http.get('js/TodoList.json').success(function(data){
@@ -172,8 +149,9 @@ var app = angular.module('templates', [
 		    	});
 		    	return count;
 	  		};
-	  		$scope.removeTodo = function(index) {
-	  			$scope.todos.splice('index', 1);
+	  		$scope.removeTodo = function(todo) {
+	  			$scope.todos.splice($scope.todos.indexOf(todo),1);
+	  			console.log(todo.text + " has been removed from list.");
 	  		};
 	 
 	  		$scope.archive = function() {
@@ -245,11 +223,6 @@ var app = angular.module('templates', [
 				}
 		}
 
-/* ---------------------------------------------------------------------- Firebase ctrl example ---- */
-		function firebaseCtrl($scope, $firebase) { 
-			var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
-			$scope.messages = $firebase(ref);
-		}
 
 
 
