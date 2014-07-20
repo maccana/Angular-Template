@@ -8,9 +8,8 @@
         <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>
-              <span class="input-group-btn" style="float:;display:inline;margin:0px 0px auto;">
-    <button class="btn btn-xs btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
-  </span>
+              <span class="input-group-btn" style="float:;display:inline;margin:0px 0px auto;"></span>
+    <button class="btn btn-xs btn-danger" ng-click="removeTodo(todo)" aria-label="Remove">X</button>
         </li>
       </ul>
       <form ng-submit="addTodo()">
@@ -26,5 +25,9 @@
    	<li>Clear completed button</li>
    	<li>HTML5 Storage</li>
    	<li>Font Awesome</li>
+    <p>List layout</p>
    </ul>
+
+  <h4>Fix:</h4>
+
 		
