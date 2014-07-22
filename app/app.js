@@ -65,11 +65,14 @@ var app = angular.module('templates', [
 					templateUrl: 'partials/storage.html',
 					controller: 'MaintCtrl'
 				})
-
+				.state('firebase', {
+					url: '/firebase',
+					templateUrl: 'partials/firebase.html',
+					controller: 'firebaseCtrl'
+				})
 		})
 
 /* CONTROLLERS */
-
 /* -------------------------------------------------------------------------- List ctrl example ---- */
 		.controller('listCtrl', function($scope){
 			/* itemList is bound to the list view via scope */
@@ -130,7 +133,14 @@ var app = angular.module('templates', [
     }
   };
 });
+
+/* ---------------------------------------------------------------------- Firebase ctrl example ---- */
+		function firebaseCtrl($scope, $firebase) { 
+			var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
+			$scope.messages = $firebase(ref);
+		}
 /* ------------------------------------------------------------------------- Todos ctrl example ---- */
+
 		function TodoCtrl($scope,$http) {
 		 	$http.get('js/TodoList.json').success(function(data){
 			$scope.todos = data;
@@ -156,9 +166,9 @@ var app = angular.module('templates', [
 	 
 	  		$scope.archive = function() {
 		    var oldTodos = $scope.todos;
-		    $scope.todos = [];
-		    angular.forEach(oldTodos, function(todo) {
-		      if (!todo.done) $scope.todos.push(todo);
+		    	$scope.todos = [];
+		    	angular.forEach(oldTodos, function(todo) {
+		      		if (!todo.done) $scope.todos.push(todo);
 		    });
 		};
 	}
