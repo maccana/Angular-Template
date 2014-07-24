@@ -69,6 +69,11 @@ var templates = angular.module('templates', [
 				templateUrl: 'partials/firebase.html',
 				controller: 'firebaseCtrl'
 			})
+			.state('/css', {
+				url : '/css',
+				templateUrl : 'partials/changeCSS.html',
+				controller : 'cssCtrl'
+			})
 			.state('/calculate', {
 				url : '/calculate',
 				templateUrl : 'partials/calc.html',
@@ -90,6 +95,19 @@ var templates = angular.module('templates', [
 	        $scope.answer = CalculatorService.cube($scope.number);
 	    }
 	})
+
+/* ------------------------------------------------------------------------------------ CSS Ctrl */
+	
+	.controller('cssCtrl', function($scope){
+		/* css style passed from input field in partial */
+		$scope.changeCSS = function(style) {
+				/* binding to value inside ng-class on the scope */
+				$scope.style = style;
+				sessionStorage.setItem(color,color);
+				alert(color + " saved");
+		}
+
+	})	
 
 /* ----------------------------------------------------------------------------------- List Ctrl */
 	
