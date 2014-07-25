@@ -5,9 +5,7 @@ var templates = angular.module('templates', [
 		'ui.router',
 		'ui.bootstrap',
 		'MyComponents',
-		'firebase',
-		//'bzSlider'
-		//'ngAnimate'
+		'firebase'
 	]) 
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
 	.config(function ($stateProvider, $urlRouterProvider){
@@ -43,18 +41,7 @@ var templates = angular.module('templates', [
 			.state('toggle', {
 				url : '/toggle',
 				templateUrl: 'partials/toggle.html',
-				controller:	function toggleImage($scope){
-					$scope.visible = true; 
-					$scope.toggle = function() {
-						var btn = document.getElementById('toggle-btn');
-						if(btn.innerHTML == 'Show Image') {
-							btn.innerHTML = 'Hide Image';
-						} 
-						else 
-						btn.innerHTML = 'Show Image';
-						$scope.visible = !$scope.visible;
-					}
-				}
+				controller: 'toggleImageCtrl'
 			})
 			.state('todo', {
 				url: '/todo',
