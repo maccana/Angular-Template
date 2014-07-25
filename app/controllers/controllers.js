@@ -1,128 +1,146 @@
 
 /* ===================================== CONTROLLERS ============================================*/
 
+/* --------------------------------------------------------------------------- Toggle Image Ctrl */
+
+templates.controller('toggleImageCtrl', function($scope) {
+
+	$scope.visible = true; 
+	$scope.toggle = function() {
+		var btn = document.getElementById('toggle-btn');
+		if(btn.innerHTML == 'Show Image') {
+			btn.innerHTML = 'Hide Image';
+		} 
+		else 
+			btn.innerHTML = 'Show Image';
+			$scope.visible = !$scope.visible;
+	}	
+}) /* All controllers appended to the app module require a closing parentheses */
+
 /* ----------------------------------------------------------------------------- Calculator Ctrl */
 
 templates.controller('CalculatorCtrl', function($scope, CalculatorService) {
 	 
-	    $scope.doSquare = function() {
-	        $scope.answer = CalculatorService.square($scope.number);
-	    }
-	 
-	    $scope.doCube = function() {
-	        $scope.answer = CalculatorService.cube($scope.number);
-	    }
-	})
+    $scope.doSquare = function() {
+        $scope.answer = CalculatorService.square($scope.number);
+    }
+ 
+    $scope.doCube = function() {
+        $scope.answer = CalculatorService.cube($scope.number);
+    }
+})
 
 /* ------------------------------------------------------------------------------------ CSS Ctrl */
 	
 templates.controller('cssCtrl', function($scope){
-		/* css style passed from input field in partial */
-		$scope.changeCSS = function(style) {
-				/* binding to value inside ng-class on the scope */
-				$scope.style = style;
-				sessionStorage.setItem(color,color);
-				alert(color + " saved");
-		}
-
-	})	
+	/* css style passed from input field in partial */
+	$scope.changeCSS = function(style) {
+			/* binding to value inside ng-class on the scope */
+			$scope.style = style;
+			sessionStorage.setItem(color,color);
+			alert(color + " saved");
+	}
+})	
 
 /* ----------------------------------------------------------------------------------- List Ctrl */
 	
-		templates.controller('listCtrl', function($scope){
-		/* itemList is bound to the list view via scope */
-		$scope.itemList = [
-			{name: "French"},
-			{name: "Guitar"},
-			{name: "Jog"},
-			{name: "Wine"},
-			{name: "Angular"},
+templates.controller('listCtrl', function($scope){
+	/* itemList is bound to the list view via scope */
+	$scope.itemList = [
+		{name: "French"},
+		{name: "Guitar"},
+		{name: "Jog"},
+		{name: "Wine"},
+		{name: "Angular"},
 
-		];
-	})
+	];
+})
 /* --------------------------------------------------------------------------------- Login Ctrl  */	
 
-	templates.controller('loginCtrl', function($scope){ 
+templates.controller('loginCtrl', function($scope){ 
 	$scope.login = function(){
 		if($scope.loginForm.$valid) {
 			console.log('sending request....');
 		}
 	};
-
 })
 
 /* -------------------------------------------------------------------------------- Storage Ctrl */
 
 // To be continued
-	templates.controller("MaintCtrl", function($scope, LS) {
-$scope.greeting = "Local storage demo app";
-$scope.value = LS.getData();
-$scope.latestData = function() {
-return LS.getData();
-};
-this.update = function(val) {
-return LS.setData(val);
-};
-})
+// templates.controller("MaintCtrl", function($scope, LS) {
+// 	$scope.greeting = "Local storage demo app";
+// 	$scope.value = LS.getData();
+// 	$scope.latestData = function() {
+// 	return LS.getData();
+// 	};
+// 	this.update = function(val) {
+// 	return LS.setData(val);
+// 	};
+// 	})
 
-.factory("LS", function($window, $rootScope) {
+// 	.factory("LS", function($window, $rootScope) {
 
-angular.element($window).on('storage', function(event) {
-if (event.key === 'my-storage') {
-  $rootScope.$apply();
-}
-});
-return {
-setData: function(val) {
-	console.log("hello2");
-  $window.localStorage && $window.localStorage.setItem('my-storage', val);
-  return this;
-},
-getData: function() {
-	// console.log("hello");
-  return $window.localStorage && $window.localStorage.getItem('my-storage');
-}
-};
-});
+// 	angular.element($window).on('storage', function(event) {
+// 	if (event.key === 'my-storage') {
+// 	  $rootScope.$apply();
+// 	}
+// 	});
+// 	return {
+// 	setData: function(val) {
+// 		console.log("hello2");
+// 	  $window.localStorage && $window.localStorage.setItem('my-storage', val);
+// 	  return this;
+// 	},
+// 	getData: function() {
+// 		// console.log("hello");
+// 	  return $window.localStorage && $window.localStorage.getItem('my-storage');
+// 	}
+// 	};
+// });
 
 /* ------------------------------------------------------------------------------= Firebase Ctrl */
 	
-	/* alternate controller structure */
-	function firebaseCtrl($scope, $firebase) { 
-		var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
-		$scope.messages = $firebase(ref);
-	}
+/* alternate controller structure */
+function firebaseCtrl($scope, $firebase) { 
+	var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
+	$scope.messages = $firebase(ref);
+} /* Controller as a function not requiring closing parentheses */
 
 /* ---------------------------------------------------------------------------------- Todos Ctrl */
 	
-	function TodoCtrl($scope,$http) {
-	 	$http.get('js/TodoList.json').success(function(data){
+function TodoCtrl($scope,$http) {
+
+ 	$http.get('js/TodoList.json').success(function(data){
 		$scope.todos = data;
-		})
-		$scope.addTodo = function() {
-	    	$scope.todos.push({text:$scope.todoText, done:false});
-	    	$scope.todoText = '';
-	  	};
-  		$scope.remaining = function() {
-	    	var count = 0;
-	    	angular.forEach($scope.todos, function(todo) {
-	      		count += todo.done ? 0 : 1;
-	    	});
-	    	return count;
-  		};
-  		$scope.removeTodo = function(todo) { /* passed todo as $index not working */
-  			$scope.todos.splice($scope.todos.indexOf(todo),1);
-  			console.log(todo.text + " has been removed from list.");
-  		};
- 
-  		$scope.archive = function() {
-	    	var oldTodos = $scope.todos;
-	    	$scope.todos = [];
-	    	angular.forEach(oldTodos, function(todo) {
-	      		if (!todo.done) $scope.todos.push(todo);
-	    });
-	};
-};
+	})
+
+	$scope.addTodo = function() {
+    	$scope.todos.push({text:$scope.todoText, done:false});
+    	$scope.todoText = '';
+  	}
+
+	$scope.remaining = function() {
+    	var count = 0;
+    	angular.forEach($scope.todos, function(todo) {
+      		count += todo.done ? 0 : 1;
+    	})
+    	return count;
+	}
+
+	$scope.removeTodo = function(todo) { /* passed todo as $index not working */
+			$scope.todos.splice($scope.todos.indexOf(todo),1);
+			console.log(todo.text + " has been removed from list.");
+	}
+
+	$scope.archive = function() {
+    	var oldTodos = $scope.todos;
+    	$scope.todos = [];
+    	angular.forEach(oldTodos, function(todo) {
+      		if (!todo.done) $scope.todos.push(todo);
+    	})
+	}
+}
 
 /* ---------------------------------------------------------------------- Limited text area Ctrl */		
 
