@@ -1,0 +1,17 @@
+<h4>Switch between view and edit</h4>
+<div ng-init="mode = 'show'">
+  <div ng-show="mode == 'show'">
+    <p>Hey, {{ user.name }}</p>
+    <button ng-click="mode = 'edit'">
+      Edit
+    </button>
+  </div>
+  <div ng-show="mode == 'edit'">
+    <p>
+      <input ng-model="user.name">
+    </p>
+    <button ng-click="mode = 'show'">
+      Done
+    </button>
+  </div>
+</div>
