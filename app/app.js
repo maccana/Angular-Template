@@ -5,7 +5,10 @@ var templates = angular.module('templates', [
 		'ui.router',
 		'ui.bootstrap',
 		'MyComponents',
-		'firebase'
+		'firebase',
+		//'bzSlider'
+		//'ngAnimate' 
+
 	]) 
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
 	.config(function ($stateProvider, $urlRouterProvider){
@@ -67,6 +70,10 @@ var templates = angular.module('templates', [
 				url : '/calculate',
 				templateUrl : 'partials/calc.html',
 				controller : 'CalculatorCtrl'
+			})
+			.state('/switch', {
+				url : '/switch',
+				templateUrl : 'partials/viewSwitch.html'
 			})
 
 	})	/* END STATE PROVIDER ROUTES */											
