@@ -75,5 +75,10 @@ var templates = angular.module('templates', [
 				url : '/switch',
 				templateUrl : 'partials/viewSwitch.html'
 			})
+			.state('/vote', {
+				url : '/vote',
+				templateUrl : 'partials/voting.html',
+				controller : 'voteCtrl'
+			})
 
 	})	/* END STATE PROVIDER ROUTES */											
