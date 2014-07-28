@@ -200,7 +200,7 @@ var addRemoveGreetingCtrl = function ($scope) {
 
 /* Alternative syntax for controller function 
 - To be implemented */
-function incrementDecrementValue($scope){ 
+function voteCtrl($scope){ 
 	$scope.value = 1;
 	$scope.incrementValue = function(value) { 
 		$scope.value += 1;
