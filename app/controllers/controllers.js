@@ -56,7 +56,7 @@ templates.controller('listCtrl', function($scope){
 	];
 })
 /* ----------------------------------------------------------------------------- Login Ctrl  */	
-
+/* To be continued */
 templates.controller('loginCtrl', function($scope){ 
 	$scope.login = function(){
 		if($scope.loginForm.$valid) {
