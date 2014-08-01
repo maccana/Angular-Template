@@ -20,3 +20,4 @@ angular.module('MyComponents', [])
 			template: "<button class='btn btn-primary' ng-click='cta()' ng-transclude></button>"
 		}
 	})
+
