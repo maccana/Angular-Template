@@ -80,5 +80,10 @@ var templates = angular.module('templates', [
 				templateUrl : 'partials/voting.html',
 				controller : 'voteCtrl'
 			})
+			.state('/color', {
+				url : '/color',
+				templateUrl : 'partials/colorTap.html',
+				controller : 'colorTapCtrl'
+			})
 
 	})	/* END STATE PROVIDER ROUTES */											
