@@ -1,7 +1,26 @@
 
 /* ===================================== CONTROLLERS ============================================*/
 
-/* ----------------------------------------------------------------------- Toggle Image Ctrl */
+/* --------------------------------------------------------------------------- Color Tap Ctrl */
+templates.controller('colorTapCtrl', function($scope) {
+	$scope.colorTap = function(){
+		var tapper = document.getElementById("tapper");
+		var display = document.getElementById("print");
+		var hexColor = '#'+hex()+hex()+hex();
+		tapper.style.backgroundColor = hexColor;
+		display.innerHTML = hexColor;
+		
+		function hex(){
+			var hexchars = "0123456789abcedf";
+			var hexval = Math.floor(16 * Math.random()); 
+			//console.log(hexchars[hexval]);
+			return (hexchars[hexval]);
+		}
+	}
+})
+
+
+/* --------------------------------------------------------------------------- Toggle Image Ctrl */
 
 templates.controller('toggleImageCtrl', function($scope) {
 
@@ -17,7 +36,7 @@ templates.controller('toggleImageCtrl', function($scope) {
 	}	
 }) /* All controllers appended to the app module require a closing parentheses */
 
-/* ------------------------------------------------------------------------- Calculator Ctrl */
+/* ----------------------------------------------------------------------------- Calculator Ctrl */
 
 templates.controller('CalculatorCtrl', function($scope, CalculatorService) {
 	 
@@ -30,7 +49,7 @@ templates.controller('CalculatorCtrl', function($scope, CalculatorService) {
     }
 })
 
-/* -------------------------------------------------------------------------------- CSS Ctrl */
+/* ------------------------------------------------------------------------------------ CSS Ctrl */
 	
 templates.controller('cssCtrl', function($scope){
 	/* css style passed from input field in partial */
@@ -42,7 +61,7 @@ templates.controller('cssCtrl', function($scope){
 	}
 })	
 
-/* ------------------------------------------------------------------------------- List Ctrl */
+/* ----------------------------------------------------------------------------------- List Ctrl */
 	
 templates.controller('listCtrl', function($scope){
 	/* itemList is bound to the list view via scope */
@@ -55,8 +74,8 @@ templates.controller('listCtrl', function($scope){
 
 	];
 })
-/* ----------------------------------------------------------------------------- Login Ctrl  */	
-/* To be continued */
+/* --------------------------------------------------------------------------------- Login Ctrl  */	
+
 templates.controller('loginCtrl', function($scope){ 
 	$scope.login = function(){
 		if($scope.loginForm.$valid) {
@@ -65,7 +84,7 @@ templates.controller('loginCtrl', function($scope){
 	};
 })
 
-/* ---------------------------------------------------------------------------- Storage Ctrl */
+/* -------------------------------------------------------------------------------- Storage Ctrl */
 
 // To be continued
 // templates.controller("MaintCtrl", function($scope, LS) {
@@ -99,7 +118,7 @@ templates.controller('loginCtrl', function($scope){
 // 	};
 // });
 
-/* --------------------------------------------------------------------------- Firebase Ctrl */
+/* ------------------------------------------------------------------------------= Firebase Ctrl */
 	
 /* alternate controller structure */
 function firebaseCtrl($scope, $firebase) { 
@@ -107,7 +126,7 @@ function firebaseCtrl($scope, $firebase) {
 	$scope.messages = $firebase(ref);
 } /* Controller as a function not requiring closing parentheses */
 
-/* ------------------------------------------------------------------------------ Todos Ctrl */
+/* ---------------------------------------------------------------------------------- Todos Ctrl */
 	
 function TodoCtrl($scope,$http) {
 
@@ -142,7 +161,7 @@ function TodoCtrl($scope,$http) {
 	}
 }
 
-/* ------------------------------------------------------------------ Limited text area Ctrl */		
+/* ---------------------------------------------------------------------- Limited text area Ctrl */		
 
 /* Text area with limit to be implemented */
 function TextAreaWithLimit($scope){
@@ -152,7 +171,7 @@ function TextAreaWithLimit($scope){
 	};
 }
 
-/* --------------------------------------------------------------------------- Playlist Ctrl */
+/* ------------------------------------------------------------------------------- Playlist Ctrl */
 
 /* To be implemented - Prototype for dynamic interactive audio playlist */	
 var playlistCtrl = function($scope,$filter) {
@@ -167,7 +186,7 @@ var playlistCtrl = function($scope,$filter) {
 	}
 }		
 
-/* ------------------------------------------------------------------------- Population Ctrl */
+/* ----------------------------------------------------------------------------- Population Ctrl */
 
 /* To be implemented - display populations and percentage of world population */
 var WorldCtrl = function ($scope) { 
@@ -183,7 +202,7 @@ var WorldCtrl = function ($scope) {
 	}	
 }
 
-/* --------------------------------------------------------------------------- Greeting Ctrl */
+/* ------------------------------------------------------------------------------ Greeting Ctrl */
 
 /* To be implemented - dynamically add / remove greeting on page */
 var addRemoveGreetingCtrl = function ($scope) {
@@ -196,15 +215,15 @@ var addRemoveGreetingCtrl = function ($scope) {
 	});
 } 
 
-/* ----------------------------------------------------------------------------- Voting Ctrl */
+/* -------------------------------------------------------------------------------- Voting Ctrl */
 
 /* Alternative syntax for controller function 
 - To be implemented */
 function voteCtrl($scope){ 
-	$scope.value = 0;
+	$scope.value = 1;
 	$scope.incrementValue = function(value) { 
 		$scope.value += 1;
-		console.log("You added one");
+		
 	}
 	$scope.resetValue = function() {
 		$scope.value = 1;
