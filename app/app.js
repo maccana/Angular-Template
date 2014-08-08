@@ -5,9 +5,7 @@ var templates = angular.module('templates', [
 		'ui.router',
 		'ui.bootstrap',
 		'MyComponents',
-		'firebase',
-		//'bzSlider'
-		//'ngAnimate' 
+		'firebase'
 
 	]) 
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
