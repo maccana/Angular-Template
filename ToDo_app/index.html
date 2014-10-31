@@ -8,6 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="style/normalize.css">
 	<link rel="stylesheet" type="text/css" href="style/reset.css">
 
+	<!-- Angular and JS friends -->
+	<script type="text/javascript" src="js/angular/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
 </head>
 <body>
@@ -36,30 +39,18 @@
 					<input type="radio" ng-model="direction" name="direction" value="reverse">
 					descending
 				</label>	
-				
-
 			</div><!-- search -->
-
 			<h1>ToDos</h1>
 			<div class="container">
-				    <ul ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
-        				<li>
-            				<input type="checkbox" name="todo.done" ng:click="recalc()">
+				<ul>
+        			<li ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
+            			<input type="checkbox" name="todo.done" ng:click="recalc()">
             				<!-- updates the css class to done_true or done_false -->
-            				<span ng:class="'done_' + todo.done">{{todo.name}}</span>
+            			<span ng:class="'done_' + todo.done">{{todo.name}}</span>
 
-            				<span>{{todo.time}}</span>
-        				</li>
-    				</ul>
-		<!-- <ul ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
-				<li>
-				<!--<span><img ng-src="{{todo.image}}.jpg" width="10%"></span> -->
-				<!--<span id="num">{{item.num}}. </span>-->
-				<!-- <span id="name">{{todo.name}}</span> -->
-				<!-- <span id="time"><p>{{todo.time}}</p></span> -->
-			<!--</li> -->
-		<!--</ul> -->
-
+            			<span>{{todo.time}}</span>
+        			</li>
+    			</ul>
 			</div>
 			<form>
         <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
@@ -69,7 +60,5 @@
 	</div>
 </body>
 
-	<!-- Angular and JS friends -->
-	<script type="text/javascript" src="js/angular/angular.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+
 </html>
