@@ -29,17 +29,17 @@
     </nav>
 	<!-- wrapper -->
 	<div id="page-wrapper">
-		<header>	
+		<div class="container">
+					<header>	
 			<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
 		</header>
-		<div class="content">
-			<!-- main tutorial nav -->
+							<!-- main tutorial nav -->
 			<div class="left-menu">
 				<ul class="nav nav-stacked">
 					<li><a href="#/home">Home</a></li>
 					<li><a href="#/list">List</a></li>
 					<li><a href="#/contact">Contact</a></li>
-					<li><a href="#/toggle">Toggle Image</a></li>
+					<li><a href="#/toggle">Toggle</a></li>
 					<li><a href="#/todo">Todo</a></li>
 					<li><a href="#/firebase">Firebase</a></li>
 					<li><a href="#/vote">Voting</a></li>
@@ -50,6 +50,8 @@
 					<li><a href="#/switch">View Swithcher</a></li>
 				</ul>	
 			</div>
+		<div class="content">
+
 
 			<!-- main section -->
 			<div class="col-xs-8" id="main">
@@ -62,12 +64,15 @@
 				</div><!-- end well -->		
 			</div><!-- end main -->	
 		</div>
+			
+		</div>
+	
 	</div><!-- end page wrapper -->
 
 	<!-- angular app modules -->
 	<script src="jquery/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <!-- <script src="angular/angular.js"></script> -->
+  	<!-- <script src="angular/angular.js"></script> -->
 
 	<script src="js/angular-ui-router.min.js"></script>
 	<script src="js/ui-bootstrap.js"></script>
