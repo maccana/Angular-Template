@@ -4,8 +4,7 @@
 	<div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
 
 	<h3 style="font-weight:200;">Add an employee to firebase</h3>
-<!-- 	NOTE: This firebase is currently not writable. 
-		Go to Security & Rules tab of firebase bashboard and hange rules setting of ".write" to true. -->
+	
 	<div class="well">
 		<label for="employeeName">Employee Name</label>
 		<input type="text" id="employeeName" ng-model="employeeName"><br>
@@ -23,17 +22,16 @@
 		<thead>
 			<th>Employee Name</th>
 			<th>Employee Age</th>
-			<th>Employee Key</th>
+			<!-- <th>Employee Key</th> -->
 			<th>Edit Employee</th>
 		</thead>
 		<tbody ng-repeat="(key,employee) in employees">
 			<tr>
 				<td>{{employee.employeeName}}</td>
 				<td>{{employee.employeeAge}}</td>
-				<td>{{key}}</td>
+				<!-- <td>{{key}}</td> -->
 				<td>
-				<button class="btn btn-danger" 
-					ng-click="deleteEmployee(key, employee.employeeName)">
+				<button class="btn btn-danger" ng-click="deleteEmployee(key, employee.employeeName)">
 					delete <span class="glyphicon glyphicon-remove"></span>
 				</button>
 				</td>
