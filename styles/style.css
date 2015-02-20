@@ -80,6 +80,11 @@ img {
 	margin-right: 20px;
 }
 
+#page-wrapper {
+  border:0px solid green;
+  width:90%;
+}
+
 /* -------------------------------------  Shopping list style ------------------------------------- */
 
 .items-block {
