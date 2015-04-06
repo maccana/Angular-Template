@@ -28,48 +28,48 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="https://maccana.github.io">Github</a></li>
+          <li><a href="https://github.com/maccana">Github</a></li>
         </ul>
         <form class="navbar-form navbar-right ng-pristine ng-valid"></form>
         <div style="padding-top: 13px"></div>
     </div>
   </nav>
+
+  <!-- main tutorial nav -->
+  <div class="left-menu">
+    <ul class="nav nav-stacked">
+      <li><a href="#/home">Home</a></li>
+      <li><a href="#/edit">Inline Edit</a></li>
+      <li><a href="#/list">List</a></li>
+      <li><a href="#/contact">Contact</a></li>
+      <li><a href="#/toggle">Toggle</a></li>
+      <li><a href="#/todo">Todo</a></li>
+      <li><a href="#/firebase">Firebase</a></li>
+      <li><a href="#/vote">Voting</a></li>
+      <li><a href="#/storage">Storage</a></li>
+      <li><a href="#/css">Dynamic CSS</a></li>
+      <li><a href="#/color">Color Tap</a></li>
+      <li><a href="#/audio">Audio</a></li>
+      <li><a href="#/switch">ngShow/Hide</a></li>
+    </ul>	
+  </div>
   <!-- wrapper -->
   <div id="page-wrapper">
-    <div class="container">
-    <header>	
-      <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
-    </header>
-    <!-- main tutorial nav -->
-    <div class="left-menu">
-      <ul class="nav nav-stacked">
-        <li><a href="#/home">Home</a></li>
-        <li><a href="#/edit">Inline Edit</a></li>
-        <li><a href="#/list">List</a></li>
-        <li><a href="#/contact">Contact</a></li>
-        <li><a href="#/toggle">Toggle</a></li>
-        <li><a href="#/todo">Todo</a></li>
-        <li><a href="#/firebase">Firebase</a></li>
-        <li><a href="#/vote">Voting</a></li>
-        <li><a href="#/storage">Storage</a></li>
-        <li><a href="#/css">Dynamic CSS</a></li>
-        <li><a href="#/color">Color Tap</a></li>
-        <li><a href="#/audio">Audio</a></li>
-        <li><a href="#/switch">ngShow/Hide</a></li>
-      </ul>	
-    </div>
+		<div class="container">	
+    	<header>	
+      	<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+    	</header>
 
-    <div class="content">
-      <!-- main section -->
-      <div class="col-xs-8" id="main">
-        <div id="ngUIRouterDemo">
-          <div ui-view class="">
-          <!-- Partials dynamically inserted here when menu link is clicked -->
-          </div>
-        </div>	
-      </div><!-- end main -->	
-    </div><!-- content -->
-    
+	    <div class="content">
+	      <!-- main section -->
+	      <div class="col-xs-10" id="main">
+	        <div id="ngUIRouterDemo">
+	          <div ui-view class="">
+	          <!-- partials dynamically inserted here -->
+	          </div>
+	        </div>	
+	      </div><!-- /end main -->	
+	    </div><!-- /content -->
 	</div><!-- end page wrapper -->
 
 	<!-- angular app modules -->
