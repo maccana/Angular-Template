@@ -233,15 +233,3 @@ function voteCtrl($scope){
 		$scope.value -= 1;
 	}
 }
-
-
-
-
-
-	
-
-
-
-
-	
-	
