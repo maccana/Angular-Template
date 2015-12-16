@@ -1,11 +1,11 @@
 
-<div class="list">
-	<p>Select list item to display image.</p>
-	<div ui-view class="list-image"></div>
-		<div class="items-block">
+<div class="list col-md-10">
+	<p>Select image to display from the item list</p>
+		<div class="items-block col-md-5">
 			<a class="list-group-item"
 			ng-repeat="item in itemList"
 			ng-class="{active: item.selected}"
 			ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
 		</div>	
+		<div ui-view class="list-image col-md-5"></div>
 </div>

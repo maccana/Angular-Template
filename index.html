@@ -14,7 +14,7 @@
 	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       
-<!--  <div class="navbar-header">
+      <div class="navbar-header">
         <button type="button" data-toggle="collapse" 
         data-target=".navbar-ex1-collapse" class="navbar-toggle">
           <span class="sr-only">Toggle navigation</span>
@@ -24,7 +24,7 @@
         </button>
         <a href="#" class="navbar-brand">Angular-Templates </a>
       </div>
--->
+
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
@@ -32,11 +32,14 @@
         </ul>
         <form class="navbar-form navbar-right ng-pristine ng-valid"></form>
         <div style="padding-top: 13px"></div>
+      </div>
     </div>
   </nav>
+  <!-- wrapper -->
+  <div id="page-wrapper" class="container">
 
-  <!-- main tutorial nav -->
-  <div class="left-menu">
+      <!-- main tutorial nav -->
+  <div class="left-menu col-md-2">
     <ul class="nav nav-stacked">
       <li><a href="#/home">Home</a></li>
       <li><a href="#/edit">Inline Edit</a></li>
@@ -51,26 +54,25 @@
       <li><a href="#/color">Color Tap</a></li>
       <li><a href="#/audio">Audio</a></li>
       <li><a href="#/switch">ngShow/Hide</a></li>
-    </ul>	
+    </ul> 
   </div>
-  <!-- wrapper -->
-  <div id="page-wrapper">
-		<div class="container">	
-    	<header>	
-      	<h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
-    	</header>
 
-	    <div class="content">
-	      <!-- main section -->
-	      <div class="col-xs-10" id="main">
-	        <div id="ngUIRouterDemo">
-	          <div ui-view class="">
-	          <!-- partials dynamically inserted here -->
-	          </div>
-	        </div>	
-	      </div><!-- /end main -->	
-	    </div><!-- /content -->
-	</div><!-- end page wrapper -->
+
+    <!-- <div class="content"> -->
+      <!-- main section -->
+      <div id="main" class="col-md-10">
+        <header>  
+          <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+        </header>
+        <div id="ngUIRouterDemo" class="col-md-10">
+          <div ui-view class="">
+          <!-- partials dynamically inserted here -->
+          </div>
+        </div>	
+      </div><!-- ./main -->	
+   <!-- </div> ./content -->
+
+	</div><!-- ./page-wrapper -->
 
 	<!-- angular app modules -->
 	<script src="jquery/jquery.js"></script>
