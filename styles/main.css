@@ -1,137 +1,121 @@
-/* Global styles */
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak {
+display:none!important;
 }
 
 #test {
-	width: 150px;
-	height:50px;
-	border:1px solid red;
+width:150px;
+height:50px;
+border:1px solid red;
 }
 
 #page-wrapper {
-  border:0px solid green;
-	margin-top:112px;
-	margin-left: auto;
-	margin-right: auto;
-	/*width:68%;*/
+border:0 solid green;
+margin-top:112px;
+margin-left:auto;
+margin-right:auto;
 }
-.content {
-	/*position: relative;
-	overflow: hidden;*/
-}
+
 #main {
-	padding:0px;
-	margin-top:0px;
+margin-top:0;
+padding:0;
 }
-header {
-	margin-bottom:30px;
-}
+
 header h1 {
-	font-family:helvetica;
-	font-weight:200;
-	margin-top:0px;
+font-family:helvetica;
+font-weight:200;
+margin-top:0;
 }
+
 #image-container {
-	width:50%;
-	margin:auto;
-	border:0px solid red;
-	padding:20px;
+width:50%;
+border:0 solid red;
+margin:auto;
+padding:20px;
 }
+
 img {
-	width:100%;
+width:100%;
 }
+
 .list-image {
-	min-height: 200px !important;
+min-height:200px!important;
 }
 
-/* Main Left Menu */
 .left-menu {
-  float: left;
-	margin-left: -25px;
-	margin-right: 25px;
+float:left;
+margin-left:-25px;
+margin-right:25px;
 }
 
-.left-menu ul {}
-
-.left-menu ul li { font-size: 14px; }
-/* Angular-UI-Router section styles */
-#ngUIRouterDemo p{
-	text-align: left;
+.left-menu ul li {
+font-size:14px;
 }
+
+#ngUIRouterDemo p {
+text-align:left;
+}
+
 #ngUIRouterDemo {
-	min-height: 490px;
-	padding:0px !important;
-	height: auto;
+min-height:490px;
+height:auto;
+padding:0!important;
 }
-/* Top menu buttons */
-#ngUIRouterDemo ul {
-	margin-bottom: 30px;
+
+#ngUIRouterDemo ul li a {
+text-decoration:none;
 }
-#ngUIRouterDemo ul li a{
-	text-decoration: none;
-}
+
 #main-menu li {
-	display: inline-block;
-	margin-right: 20px;
+display:inline-block;
+margin-right:20px;
 }
-
-
-/* -------------------------------------  Shopping list style ------------------------------------- */
 
 .items-block {
-    text-align: center;
+text-align:center;
 }
-/*.list {
-	min-height: auto !important;
-	overflow: hidden;
-}
-.list ul {
-	margin-left: 0px !important;
 
-	background-color: #555;
-	color: #f1f1f1;
+.img-responsive {
+max-width:100%;
+min-width:100%;
 }
-.list a {
-	display:block;
-	font-size:20px; 
-	padding:3px;
-	width: 20%;
-	
-}*/
-.img-responsive { max-width: 100%; min-width: 100%; }
-/* --------------------------------------- Todo app style ---------------------------------------- */
+
 .done-true {
-  text-decoration: line-through;
-  color: grey;
-}
-.unstyled li {
-	list-style-type: none;
+text-decoration:line-through;
+color:grey;
 }
 
-/* --------------------------------------- Change CSS app style ---------------------------------- */
+.unstyled li {
+list-style-type:none;
+}
 
 .blue {
-  color:blue;
-}
-.red {
-	color:red;
-}
-.large {
-	font-size:30px;
-}
-.italic {
-  font-style:italic;
+color:blue;
 }
 
-/* --------------------------------------- Change Color app style ---------------------------------- */
-#tapper {
-	margin: 10px;
-	width: 300px;
-	height: 300px; background-color: #f00;
+.red {
+color:red;
 }
-#tapper, #print {
-	float:left;
-	display: inline;
+
+.large {
+font-size:30px;
+}
+
+.italic {
+font-style:italic;
+}
+
+#tapper {
+width:300px;
+height:300px;
+background-color:red;
+margin:10px;
+}
+
+#tapper,#print {
+float:left;
+display:inline;
+}
+
+header,#ngUIRouterDemo ul {
+margin-bottom:30px;
 }
