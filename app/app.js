@@ -24,7 +24,6 @@ var templates = angular.module('templates', [
 			.state('contact', {
 				url : '/contact',
 				templateUrl: 'partials/contact.html'
-
 			})
 			.state('list', {
 				url : '/list',
