@@ -11,7 +11,7 @@
 </head>
 <!-- init greeting.name to value 'Angular' -->
 <body ng-init="greeting = {name : 'Angular'}" ng-cloak class="ng-cloak">
-	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       
       <div class="navbar-header">
@@ -57,27 +57,21 @@
     </ul> 
   </div>
 
-
-    <!-- <div class="content"> -->
-      <!-- main section -->
-      <div id="main" class="col-md-10">
-        <header>  
-          <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
-        </header>
-        <div id="ngUIRouterDemo" class="col-md-10">
-          <div ui-view class="">
-          <!-- partials dynamically inserted here -->
-          </div>
-        </div>	
-      </div><!-- ./main -->	
-   <!-- </div> ./content -->
-
-	</div><!-- ./page-wrapper -->
+  <div id="main" class="col-md-10">
+    <header>  
+      <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1> 
+    </header>
+    <div id="ngUIRouterDemo" class="col-md-10">
+      <div ui-view class="">
+      <!-- partials dynamically inserted here -->
+      </div>
+    </div>	
+  </div><!-- ./main -->	
 
 	<!-- angular app modules -->
 	<script src="jquery/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <!-- <script src="angular/angular.js"></script> -->
+  	<!-- <script src="angular/angular.js"></script> -->
 	<script src="js/angular-ui-router.min.js"></script>
 	<script src="js/ui-bootstrap.js"></script>
 	<script src="app/app.js"></script>

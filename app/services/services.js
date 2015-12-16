@@ -1,8 +1,10 @@
 'use strict';
 
-/* ===================================== SERVICES ===========================================*/
+/* ------------------------------------------------------------------------------------
+  SERVICES 
+------------------------------------------------------------------------------------- */
 
-/* ----------------------------------------------------------------------- CalculatorService */ 
+/* CALCULATOR SERVICE */ 
 
 templates.service('CalculatorService', function(MathService){
 
@@ -11,7 +13,7 @@ templates.service('CalculatorService', function(MathService){
   this.cube = function(a) { return MathService.multiply(a, MathService.multiply(a,a)); };
 })
 
-/* ----------------------------------------------------------------------------- MathService */
+/* MATH SERVICE */
 
 templates.service('MathService', function() {
   
