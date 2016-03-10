@@ -33,24 +33,23 @@
 				</label>
 				<label>
 					<input type="radio" ng-model="direction" name="direction" checked>
-					ascending			
+					ascending
 				</label>
 				<label>
 					<input type="radio" ng-model="direction" name="direction" value="reverse">
 					descending
-				</label>	
+				</label>
 			</div><!-- search -->
 			<h1>ToDos</h1>
 			<div class="container">
 				<ul>
-        			<li ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
-            			<input type="checkbox" name="todo.done" ng:click="recalc()">
-            				<!-- updates the css class to done_true or done_false -->
-            			<span ng:class="'done_' + todo.done">{{todo.name}}</span>
-
-            			<span>{{todo.time}}</span>
-        			</li>
-    			</ul>
+    			<li ng-repeat="todo in todos | filter: query | orderBy: itemOrder:direction">
+        			<input type="checkbox" name="todo.done" ng:click="recalc()">
+        				<!-- updates the css class to done_true or done_false -->
+        			<span ng:class="'done_' + todo.done">{{todo.task}}</span>
+        			<span>{{todo.time}}</span>
+    			</li>
+    		</ul>
 			</div>
 			<form>
         <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
@@ -59,6 +58,4 @@
 		</div>
 	</div>
 </body>
-
-
 </html>
