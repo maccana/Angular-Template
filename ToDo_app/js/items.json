@@ -1,15 +1,16 @@
 
 [
-	{"task":"1","text":"Have lunch","done": "false"},
+	{"id":"1","task":"Have lunch","done": "false"},
 
-	{"task":"2","text":"Walk dog","done": "false"},
+	{"id":"2","task":"Walk dog","done": "false"},
 
-	{"task":"3","text":"Play guitar","done": "false"},
+	{"id":"3","task":"Play guitar","done": "false"},
 
-	{"task":"4","text":"Learn Angular","done": "false"},
+	{"id":"4","task":"Learn Angular","done": "false"},
 
-	{"task":"5","text":"CxWebsite","done": "false"},
+	{"id":"5","task":"CxWebsite","done": "false"},
 
-	{"task":"6","text":"Check WebAudio in projects folder","done": "false"}
-]
+	{"id":"6","task":"Check WebAudio in projects folder","done": "false"},
 	
+	{"id":"6","task":"Build DIY Preamp", "done":"false"}
+]
