@@ -9,7 +9,7 @@ app.controller('Ctrl1', function Ctrl1($scope, $http) {
 
 	$scope.addTodo = function () {
 	 		console.log("Todo added");
-	    	$scope.todos.push({name:$scope.formTodoText, done:false});
+	    	$scope.todos.push({task:$scope.formTodoText, done:false});
 	    	$scope.formTodoText = '';
 	 };
 
