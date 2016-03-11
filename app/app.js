@@ -7,11 +7,14 @@ var templates = angular.module('templates', [
 		'MyComponents',
 		'firebase'
 
-	]) 
+	])
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
 	.config(function ($stateProvider, $urlRouterProvider){
+
+		$urlRouterProvider.otherwise('/');
+
 		$stateProvider
-			.state('/', {
+			.state('login', {
 				url : '/',
 				templateUrl : 'partials/login.html',
 				controller : 'loginCtrl'
@@ -83,4 +86,4 @@ var templates = angular.module('templates', [
 				controller : 'colorTapCtrl'
 			})
 
-	})	/* END STATE PROVIDER ROUTES */											
+	})	/* END STATE PROVIDER ROUTES */
