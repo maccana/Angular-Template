@@ -4,6 +4,7 @@
 */
 
 /* Color Tap Ctrl */
+
 templates.controller('colorTapCtrl', function($scope) {
 	$scope.colorTap = function(){
 		var tapper = document.getElementById("tapper");
