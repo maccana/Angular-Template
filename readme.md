@@ -11,5 +11,5 @@ NOTE: Firebase Read/Wrtie setttings in the Security & Rules tab of your Firebase
 
 To Run
 -------
-Go to root of project
-Run node server
+$cd <project-folder>  
+$node server
