@@ -7,7 +7,7 @@ UPDATE:
 -------
 Re: `partials/firebase.html`  
 To protect my personal Firebase, the database used in this project is currently not writable.     
-NOTE: Firebase Read/Wrtie setttings in the Security & Rules tab of your Firebase dashboard. The ability to write to a Firebase database can be controlled by changing the rules setting of ".write" to true/false.
+**NOTE:**   Firebase Read/Wrtie setttings in the Security & Rules tab of your Firebase dashboard. The ability to write to a Firebase database can be controlled by changing the rules setting of ".write" to true/false.
 
 To Run
 -------
