@@ -1,9 +1,13 @@
-Test app to illustrate and practice various Angular principals and build re-usable templates. App has also integrated an Express server for future backend developement purposes.
+Angular Templates & Examples
+============================
+
+Test app to illustrate and practice various Angular principals and build re-usable templates. This project also includes an Express server to facilitate future backend developement and allow the template to be used as the basis for RESTful HTTP backed Angular apps.
 
 UPDATE:
-partials/firebase.html
-NOTE: This firebase is currently not writable. 
-Go to Security & Rules tab of firebase dashboard and change rules setting of ".write" to true.
+-------
+Re: partials/firebase.html
+To protect my personal Firebase, the database used in this project is currently not writable. 
+NOTE: Firebase Read/Wrtie setttings in the Security & Rules tab of your Firebase dashboard. The ability to write to a Firebase database can be controlled by changing the rules setting of ".write" to true/false.
 
 To Run
 -------
