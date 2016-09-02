@@ -11,5 +11,5 @@ NOTE: Firebase Read/Wrtie setttings in the Security & Rules tab of your Firebase
 
 To Run
 -------
-`$cd <project-folder>`  
+`$cd <root>`  
 `$node server`
