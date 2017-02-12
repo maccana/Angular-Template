@@ -24,6 +24,11 @@ var templates = angular.module('templates', [
 				templateUrl: 'partials/home.html'
 
 			})
+			.state('inline-edit', {
+				url : '/inline-edit',
+				templateUrl: 'partials/inlineEdit.html',
+				controller: 'inlineEditCtrl'
+			})
 			.state('contact', {
 				url : '/contact',
 				templateUrl: 'partials/contact.html'
