@@ -7,6 +7,9 @@ display:none!important;
 a {
   color: #89898a;
 }
+ul li {
+  list-style-type: none;
+}
 #test {
 width:150px;
 height:50px;
@@ -15,7 +18,7 @@ border:1px solid red;
 #page-wrapper {
   margin-left:auto;
   margin-right:auto;
-  max-width: 1000px;
+  max-width: 960px;
 }
 .navbar-default {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
@@ -46,6 +49,37 @@ header h1 {
 img {
   width:100%;
 }
+
+/* ToDo styles */
+
+#todo-app {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e7e7e7;
+}
+#todo-overview {
+  margin-bottom: 20px;
+}
+#todo-list {
+  margin-bottom: 50px;
+}
+#todo-app ul li {
+  padding: 5px 0px 5px;
+  text-align: left;
+  padding-left: 36px;
+}
+.todo-delete {
+  color: #fff;
+  background-color: red;
+  padding: 4px;
+  border-radius: 4px;
+}
+/*#todo-wrap h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}*/
+
+/* end todo styles */
 
 .list-image {
   min-height:200px!important;
@@ -221,6 +255,9 @@ header,#ngUIRouterDemo ul {
  .cell:hover h2 {
    color: #4d90fc !important;
  }
+ #todo-app ul li {
+   padding-left: 0px;
+ }
 
 } /* ./end min-width: 641px */
 
@@ -254,5 +291,9 @@ header,#ngUIRouterDemo ul {
  .cell h2 {
    font-size: 28px;
  }
+ #todo-ip {
+   max-width: 40%;
+ }
+
 
 } /* ./end desktop & larger styles */
