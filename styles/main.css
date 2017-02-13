@@ -29,10 +29,11 @@ border:1px solid red;
   border: 0;
 }
 .navbar-brand {
-  margin-right: 48px;
+  margin-right: 0px;
+  margin-top: 5px
 }
 .fa-home {
-  font-size: 19px;
+  /*font-size: 19px;*/
 }
 #main {
   margin-top: 20px;
@@ -228,6 +229,10 @@ header,#ngUIRouterDemo ul {
     /*margin-left: -1rem;*/
     margin-bottom: 1rem;
   }
+
+  #firebase-wrapper .table-wrap {
+    max-width: 95%;
+  }
 } /* ./end max-width 600px */
 
 /* Adjustments for transition from tablet/phablet portrait to landscape */
@@ -238,7 +243,10 @@ header,#ngUIRouterDemo ul {
     line-height: 1.2;
   }
   h1 {
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
+  }
+  .page-header {
+    margin-bottom: 44px;
   }
   /* login */
   .login-wrapper {
@@ -274,6 +282,13 @@ header,#ngUIRouterDemo ul {
  }
  #todo-app ul li {
    padding-left: 0px;
+ }
+
+ #firebase-page-header {
+   margin-bottom: 40px;
+ }
+ #firebase-wrapper table th {
+   background-color: azure;
  }
 
 } /* ./end min-width: 641px */

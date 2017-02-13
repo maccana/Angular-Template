@@ -1,41 +1,43 @@
-<h2 style="font-weight:200;">Utilising Firebase API with Angular</h2>
-<div>
-	<div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
+<div id="firebase-wrapper" style="">
+  <header class="sub-header">
+		<h2 style="font-weight:200;">Using Firebase API with Angular</h2>
+		<p>Add/delete employees to/from firebase backend. Table is updated in real-time.</p>
+	</header>
 
-	<h3 style="font-weight:200;">Add an employee to firebase</h3>
+	<form class="form-inline" role="search">
+		 <div class="form-group">
+				 <!-- <label for="employeeName">Employee Name: </label> -->
+				 <input type="text" id="employeeName" class="form-control" ng-model="employeeName"
+				 	name="name" placeholder="Employee name" autofocus>
+		 </div>
+		 <div class="form-group">
+				 <!-- <label for="employeeRole">Role: </label> -->
+				 <input type="text" id="employeeAge" class="form-control" ng-model="employeeRole" name="role" placeholder="Employee role">
+		 </div>
+		 <button type="submit"class="btn btn-primary" ng-click="saveEmployee()">
+				Save
+			<span class="">
+				<i class="fa fa-check"></i>
+			</span>
+		</button>
+ </form>
 
-	<div class="well">
-		<label for="employeeName">Employee Name</label>
-		<input type="text" id="employeeName" ng-model="employeeName"><br>
-		<label for="employeeName">Employee Age</label>
-		<input type="text" id="employeeAge" ng-model="employeeAge"><br><br>
-		<div>
-			<button class="btn btn-primary" ng-click="saveEmployee()">
-			Save <span class="glyphicon glyphicon-ok"></span>
-			</button>
+ <table class="table table-bordered">
+ 	<thead>
+ 		<th>Employee Name</th>
+ 		<th>Role</th>
+ 		<!-- <th>Employee Key</th> -->
+ 		<th>Actions</th>
+ 	</thead>
+ 	<tbody ng-repeat="(key,employee) in employees">
+ 		<tr>
+ 			<td>{{employee.employeeName}}</td>
+ 			<td>{{employee.employeeRole}}</td>
+ 			<td>
+ 				<i class="fa fa-times fa-2x" ng-click="deleteEmployee(key, employee.employeeName)"></i>
+ 			</td>
+ 		</tr>
+ 	</tbody>
+ </table>
 
-		</div>
-	</div>
-	<br>
-	<table class="table table-bordered">
-		<thead>
-			<th>Employee Name</th>
-			<th>Employee Age</th>
-			<!-- <th>Employee Key</th> -->
-			<th>Edit Employee</th>
-		</thead>
-		<tbody ng-repeat="(key,employee) in employees">
-			<tr>
-				<td>{{employee.employeeName}}</td>
-				<td>{{employee.employeeAge}}</td>
-				<!-- <td>{{key}}</td> -->
-				<td>
-				<button class="btn btn-danger" ng-click="deleteEmployee(key, employee.employeeName)">
-					delete <span class="glyphicon glyphicon-remove"></span>
-				</button>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<hr>
-</div>
+</div><!-- ./end firebase-wrapper -->
