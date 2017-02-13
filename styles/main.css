@@ -20,6 +20,9 @@ border:1px solid red;
   margin-right:auto;
   max-width: 960px;
 }
+.nav navbar-nav {
+  margin-top: 0px;
+}
 .navbar-default {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
   background-color: rgb(255, 255, 255);
@@ -27,6 +30,9 @@ border:1px solid red;
 }
 .navbar-brand {
   margin-right: 48px;
+}
+.fa-home {
+  font-size: 19px;
 }
 #main {
   margin-top: 20px;
