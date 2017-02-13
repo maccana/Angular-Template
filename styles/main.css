@@ -1,3 +1,5 @@
+/* Custom styles for Angular-Template app */
+
 [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak {
 display:none!important;
 }
@@ -24,108 +26,101 @@ border:1px solid red;
   margin-right: 48px;
 }
 #main {
-margin-top: 20px;
-/*padding: 0px 24px 24px 24px;*/
+  margin-top: 20px;
+  /*padding: 0px 24px 24px 24px;*/
 }
 
 header h1 {
-font-family:helvetica;
-font-weight:200;
-margin-top:0;
+  font-family:helvetica;
+  font-weight:200;
+  margin-top:0;
 }
 
 #image-container {
-width:50%;
-border:0 solid red;
-margin:auto;
-padding:20px;
+  width:50%;
+  border:0 solid red;
+  margin:auto;
+  padding:20px;
 }
 
 img {
-width:100%;
+  width:100%;
 }
 
 .list-image {
-min-height:200px!important;
+  min-height:200px!important;
 }
 
 .left-menu {
-float:left;
-margin-left:-25px;
-margin-right:25px;
+  float:left;
+  margin-left:-25px;
+  margin-right:25px;
 }
 
 .left-menu ul li {
-font-size:14px;
+  font-size:14px;
 }
 
 #ngUIRouterDemo p {
-text-align:left;
+  text-align:left;
 }
 
 #ngUIRouterDemo {
-min-height:490px;
-height:auto;
-padding:0!important;
+  min-height:490px;
+  height:auto;
+  padding:0!important;
 }
 
 #ngUIRouterDemo ul li a {
-text-decoration:none;
+  text-decoration:none;
 }
 
 #main-menu li {
-display:inline-block;
-margin-right:20px;
+  display:inline-block;
+  margin-right:20px;
 }
 
 .items-block {
-text-align:center;
+  text-align:center;
 }
-
 .img-responsive {
-max-width:100%;
-min-width:100%;
+  max-width:100%;
+  min-width:100%;
 }
-
 .done-true {
-text-decoration:line-through;
-color:grey;
+  text-decoration:line-through;
+  color:grey;
 }
-
 .unstyled li {
-list-style-type:none;
+  list-style-type:none;
 }
-
 .blue {
-color:blue;
+  color:blue;
 }
-
 .red {
-color:red;
+  color:red;
 }
-
 .large {
-font-size:30px;
+  font-size:30px;
 }
-
 .italic {
-font-style:italic;
+  font-style:italic;
 }
 
 #tapper {
-width:300px;
-height:300px;
-background-color:red;
-margin:10px;
+  width:300px;
+  height:300px;
+  background-color:red;
+  margin:10px;
 }
 
 #tapper,#print {
-float:left;
-display:inline;
+  float:left;
+  display:inline;
 }
 
 header,#ngUIRouterDemo ul {
-margin-bottom:30px;
+  margin-bottom:30px;
 }
 #model-input {
   width: 50%;
@@ -140,6 +135,27 @@ margin-bottom:30px;
 }
 .cell {
   border: 1px solid rgba(136, 136, 136, 0.34);
+}
+
+/* From HTML5 BP project */
+.responsive-image {
+  max-width: 100%;
+}
+.cell img {
+  display: block;
+}
+.cell {
+  display: flex;
+  /*text-align: -webkit-right;*/
+  justify-content: center;
+  align-items: center;
+  max-height: 70px;
+  min-height: 70px;
+  background-color: transparent;
+}
+.cell h2 {
+  margin: 0;
+  color: #67728e;
 }
 
 /* Tablet & smaller */
@@ -167,63 +183,14 @@ margin-bottom:30px;
     max-width: 100%;
     max-height: 58px;
     min-height: 58px;
-      /*width: calc(50% - 2rem);*/
-      /*width: calc(33.33333% - 2rem);*/
-      /*margin-left: -1rem;*/
-      margin-bottom: 1rem;
-
-
+    /*width: calc(50% - 2rem);*/
+    /*width: calc(33.33333% - 2rem);*/
+    /*margin-left: -1rem;*/
+    margin-bottom: 1rem;
   }
 } /* ./end max-width 600px */
 
-/* From HTML5 BP project */
-.mm-container {
-  max-width: 100%;
-}
-
-.responsive-image {
-  max-width: 100%;
-}
-
-.cell img {
-  display: block;
-}
-
-.cell {
-  display: flex;
-  /*text-align: -webkit-right;*/
-  justify-content: center;
-  align-items: center;
-  max-height: 70px;
-  min-height: 70px;
-  background-color: transparent;
-}
-.cell h2 {
-  margin: 0;
-  color: #67728e;
-}
-
-/* Desktop & larger screens */
-@media screen and (min-width: 800px) {
- /* Desktop styles go here */
- #page-wrapper {
-   max-width: 1000px;
- }
- img {
-   opacity: .8;
-   transition: all .5s ease;
-   /*-webkit-backface-visibility: hidden;*/
-   /*-webkit-transform: rotate(0);
-   -moz-transform: rotate(0);
-   transform: rotate(0);*/
- }
- a {-webkit-transform: rotate(0);}
- a img {-webkit-backface-visibility: hidden;}
-
- img:hover {
-   opacity: 1;
- }
-}
+/* Adjustments for transition from tablet/phablet portrait to landscape */
 @media screen and (min-width: 641px) {
   body {
     padding-top: 80px;
@@ -244,22 +211,48 @@ margin-bottom:30px;
    /*width: calc(33.33333% - 2rem);*/
    width: calc(25% - 2rem);
    margin: 1rem;
-
-
  }
  .cell:hover {
    background-color: aliceblue;
  }
+ .cell h2 {
+   font-size: 22px; /* Adjust to keep text away from edges of cell */
+ }
  .cell:hover h2 {
    color: #4d90fc !important;
-   /*text-decoration: none !important;*/
  }
-}
+
+} /* ./end min-width: 641px */
+
 /*@media screen and (min-width: 1000px) {
  .cell {
    /* Add gutters */
    /*width: calc(33.33333% - 1rem);*/
    /*width: calc(33.33333% - 2rem);*/
+  /*}*/
+/*}*/
 
+/* Desktop & larger screens */
+@media screen and (min-width: 800px) {
+ /* Desktop styles go here */
+ #page-wrapper {
+   max-width: 1000px;
  }
-}
+ img {
+   opacity: .8;
+   transition: all .5s ease;
+   /*-webkit-backface-visibility: hidden;*/
+   /*-webkit-transform: rotate(0);
+   -moz-transform: rotate(0);
+   transform: rotate(0);*/
+ }
+ a {-webkit-transform: rotate(0);}
+ a img {-webkit-backface-visibility: hidden;}
+ img:hover {
+   opacity: 1;
+ }
+ .cell h2 {
+   font-size: 28px;
+ }
+
+} /* ./end desktop & larger styles */
