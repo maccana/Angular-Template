@@ -69,7 +69,7 @@ var templates = angular.module('templates', [
 			.state('firebase', {
 				url: '/firebase',
 				templateUrl: 'partials/firebase.html',
-				controller: 'firebaseCtrl'
+				controller: 'FirebaseCtrl'
 			})
 			.state('/css', {
 				url : '/css',

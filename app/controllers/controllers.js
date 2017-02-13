@@ -121,14 +121,6 @@ templates.controller('loginCtrl', function($scope){
 // 	};
 // });
 
-/* Firebase Ctrl */
-
-/* alternate controller structure */
-function firebaseCtrl($scope, $firebase) {
-	var ref = new Firebase("https://sb1m27fx608.firebaseio-demo.com/");
-	$scope.messages = $firebase(ref);
-} /* Controller as a function not requiring closing parentheses */
-
 
 
 /* Limited text area Ctrl */

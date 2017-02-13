@@ -1,6 +1,5 @@
 <h2 style="font-weight:200;">Utilising Firebase API with Angular</h2>
-
-<div ng-controller="firebaseCtrl">
+<div>
 	<div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
 
 	<h3 style="font-weight:200;">Add an employee to firebase</h3>
@@ -14,7 +13,7 @@
 			<button class="btn btn-primary" ng-click="saveEmployee()">
 			Save <span class="glyphicon glyphicon-ok"></span>
 			</button>
-			
+
 		</div>
 	</div>
 	<br>
@@ -40,6 +39,3 @@
 	</table>
 	<hr>
 </div>
-
-
-
