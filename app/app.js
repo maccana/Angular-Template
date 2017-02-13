@@ -11,11 +11,11 @@ var templates = angular.module('templates', [
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
 	.config(function ($stateProvider, $urlRouterProvider){
 
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('home');
 
 		$stateProvider
 			.state('login', {
-				url : '/',
+				url : '/login',
 				templateUrl : 'partials/login.html',
 				controller : 'loginCtrl'
 			})
@@ -42,7 +42,6 @@ var templates = angular.module('templates', [
 				url : '/list',
 				templateUrl: 'partials/list.html',
 				controller: 'listCtrl'
-
 			})
 			.state('list.item', {
 				url : '/:item', /* NOTE: ng knows to append item param to list url */
