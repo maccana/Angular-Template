@@ -5,16 +5,16 @@
 	<!-- normalize -->
 	<link rel="stylesheet" href="styles/normalize.css">
 	<!-- stylesheets -->
-	<link rel="stylesheet" href="styles/bootstrap-3.2.0/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="styles/bootstrap-3.2.0/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="styles/hack.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- <link rel="stylesheet" href="app/frost/style/style.css">
 	<link rel="stylesheet" href="app/frost/style/udy.css"> -->
 </head>
 <!-- init greeting.name to value 'Angular' -->
 <body ng-init="greeting = {name : 'Angular'}" ng-cloak class="ng-cloak">
-<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-
       <div class="navbar-header">
         <button type="button" data-toggle="collapse"
         data-target=".navbar-ex1-collapse" class="navbar-toggle">
@@ -26,22 +26,22 @@
         <a href="#" class="navbar-brand">
 					<i class="fa fa-cube"></i>Angular-Demos</a>
       </div>
-
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="#/home">Home</a></li>
           <li><a href="https://github.com/maccana">Github</a></li>
         </ul>
-        <form class="navbar-form navbar-right ng-pristine ng-valid"></form>
-        <div style="padding-top: 13px"></div>
+        <!-- <form class="navbar-form navbar-right ng-pristine ng-valid"></form>
+        <div style="padding-top: 13px"></div> -->
       </div>
     </div>
   </nav>
+
   <!-- wrapper -->
   <div class="container" id="page-wrapper">
 
   <!-- main tutorial nav -->
-  <div class="left-menu col-md-2">
+  <!-- <div class="left-menu col-md-2 col-sml-12">
     <ul class="nav nav-stacked">
       <li><a href="#/home">Home</a></li>
       <li><a href="#/inline-edit">Inline Edit</a></li>
@@ -57,31 +57,34 @@
       <li><a href="#/audio">Audio</a></li>
       <li><a href="#/switch">ngShow/Hide</a></li>
     </ul>
-  </div>
+  </div> -->
 
-  <div id="main" class="col-md-10">
-    <header>
+  <!-- <div id="main" class=""> -->
+    <header class="page-header">
       <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1>
     </header>
-    <div id="ngUIRouterDemo" class="col-md-10">
+    <!-- <div id="ngUIRouterDemo"> -->
       <div ui-view class="">
       <!-- partials dynamically inserted here -->
       </div>
-    </div>
-  </div><!-- ./main -->
-
-	<!-- angular app modules -->
+    <!-- </div> -->
+  <!-- </div>-->
+	<!-- Angular, jQuery etc. -->
 	<script src="jquery/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
   	<!-- <script src="angular/angular.js"></script> -->
 	<script src="js/angular-ui-router.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="js/ui-bootstrap.js"></script>
-	<script src="app/app.js"></script>
 
+	<!-- App JS -->
+	<script src="app/app.js"></script>
 	<script src="js/directives/directives.js"></script>
 	<script src="app/services/services.js"></script>
 	<script src="app/controllers/controllers.js"></script>
 	<script src="app/controllers/inline-edit.js"></script>
+	<script src="app/controllers/model.js"></script>
+
 	<!-- Frost js -->
 	<!-- <script src="app/frost/directives/directives.js"></script>
 	<script src="app/frost/controllers/controllers.js"></script>
