@@ -240,6 +240,17 @@ header,#ngUIRouterDemo ul {
   h1 {
     margin-bottom: 30px;
   }
+  /* login */
+  .login-wrapper {
+    max-width: 60%;
+    margin: 60px auto;
+  }
+  /* Home */
+  .home-wrapper {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+  }
  .grid {
    display: flex;
    flex-wrap: wrap;
