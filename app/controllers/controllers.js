@@ -77,15 +77,7 @@ templates.controller('listCtrl', function($scope){
 
 	];
 })
-/* Login Ctrl */
 
-templates.controller('loginCtrl', function($scope){
-	$scope.login = function(){
-		if($scope.loginForm.$valid) {
-			console.log('sending request....');
-		}
-	};
-})
 
 /* Storage Ctrl */
 

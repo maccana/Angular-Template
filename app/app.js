@@ -17,7 +17,7 @@ var templates = angular.module('templates', [
 			.state('login', {
 				url : '/login',
 				templateUrl : 'partials/login.html',
-				controller : 'loginCtrl'
+				controller : 'LoginCtrl'
 			})
 			.state('home', {
 				url : '/home',
