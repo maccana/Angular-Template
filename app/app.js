@@ -41,7 +41,7 @@ var templates = angular.module('templates', [
 			.state('list', {
 				url : '/list',
 				templateUrl: 'partials/list.html',
-				controller: 'listCtrl'
+				controller: 'ListCtrl'
 			})
 			.state('list.item', {
 				url : '/:item', /* NOTE: ng knows to append item param to list url */
@@ -91,8 +91,8 @@ var templates = angular.module('templates', [
 			})
 			.state('/color', {
 				url : '/color',
-				templateUrl : 'partials/colorTap.html',
-				controller : 'colorTapCtrl'
+				templateUrl : 'partials/color-tap.html',
+				controller : 'ColorCtrl'
 			})
 
 	})	/* END STATE PROVIDER ROUTES */

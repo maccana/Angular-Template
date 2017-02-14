@@ -3,24 +3,6 @@
 *	 Controllers
 */
 
-/* Color Tap Ctrl */
-
-templates.controller('colorTapCtrl', function($scope) {
-	$scope.colorTap = function(){
-		var tapper = document.getElementById("tapper");
-		var display = document.getElementById("print");
-		var hexColor = '#'+hex()+hex()+hex();
-		tapper.style.backgroundColor = hexColor;
-		display.innerHTML = hexColor;
-
-		function hex(){
-			var hexchars = "0123456789abcedf";
-			var hexval = Math.floor(16 * Math.random());
-			//console.log(hexchars[hexval]);
-			return (hexchars[hexval]);
-		}
-	}
-})
 
 
 /* Toggle Image Ctrl */
@@ -67,15 +49,7 @@ templates.controller('cssCtrl', function($scope){
 /* List Ctrl */
 
 templates.controller('listCtrl', function($scope){
-	/* itemList is bound to the list view via scope */
-	$scope.itemList = [
-		{name: "French"},
-		{name: "Guitar"},
-		{name: "Jog"},
-		{name: "Wine"},
-		{name: "Angular"},
 
-	];
 })
 
 
