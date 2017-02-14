@@ -1,0 +1,19 @@
+<!-- located at partials/home.html -->
+<!-- Simple ng-model example -->
+<div class="dir1-wrapper">
+  <header class="sub-header">
+    <h2 style="font-weight:200;">{{ pageTitle }}</h2>
+
+    <p>Simple custom directive example. This example uses Angular's modular directive features to create a custom html element
+      that can be used anywhere in the DOM. This directive results in a <b>&ltcontact-card&gt</b> element which is used to
+      iterate over a list of contacts using as HTML template the <b>ng-repeat</b> directive.</p>
+  </header>
+
+  <div ng-repeat="friend in friends">
+    <contact-card friend="friend"></contact-card>
+    <!-- <default-button></default-button> -->
+  </div>
+  <!-- <default-button value="click">Click<default-button> -->
+  <hr>
+
+</div>

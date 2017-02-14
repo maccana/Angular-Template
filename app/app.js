@@ -9,7 +9,8 @@ var templates = angular.module('templates', [
 
 	])
 	/* Configuration of ui-router to inject views into ui-view element in index.html */
-	.config(function ($stateProvider, $urlRouterProvider){
+
+	.config(function ($stateProvider, $urlRouterProvider, $locationProvider){
 
 		$urlRouterProvider.otherwise('home');
 
@@ -94,5 +95,12 @@ var templates = angular.module('templates', [
 				templateUrl : 'partials/color-tap.html',
 				controller : 'ColorCtrl'
 			})
+			.state('/contact-card', {
+				url : '/contact-card',
+				templateUrl : 'partials/contact-card.html',
+				controller : 'ContactCardCtrl'
+			})
+			// use the HTML5 History API
+      // $locationProvider.html5Mode(true);
 
 	})	/* END STATE PROVIDER ROUTES */

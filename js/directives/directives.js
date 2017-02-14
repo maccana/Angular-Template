@@ -11,8 +11,13 @@ angular.module('MyComponents', [])
 				element.focus(function(){
 					element.select();
 				})
+<<<<<<< HEAD
 			}}})
-	
+
+=======
+			}
+		}
+	})
 	.directive('defaultButton', function() {
 		return {
 			restrict: 'E',
@@ -20,4 +25,18 @@ angular.module('MyComponents', [])
 			template: "<button class='btn btn-primary' ng-click='cta()' ng-transclude></button>"
 		}
 	})
-
+			template: "<button class='btn btn-primary' ng-click='cta()' ng-transclude>Click</button>"
+		}
+	})
+	.directive('contactCard', function() {
+		return {
+			restrict: 'E',
+			scope: {
+				friend: '='
+			},
+			templateUrl: 'partials/directives/contact-card.html',
+			controller: function($scope) {
+				console.log($scope.friend);
+			}
+		}
+	})
