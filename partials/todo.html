@@ -1,0 +1,47 @@
+<!-- Simple Todo example -->
+<div ng-controller="TodoCtrl" style="">
+  <header class="sub-header">
+    <h2>Super Todo App</h2>
+
+  </header>
+  <section id="todo-app">
+    <div id="todo-overview">
+      <span>{{remaining()}} of {{todos.length}} tasks remaining</span>
+      <span>[ <a href="" ng-click="archive()">archive</a> ]</span>
+    </div>
+    <ul id="todo-list">
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <span class="input-group-btn" style="display:inline;margin:0px 0px auto;"></span>
+            <i class="fa fa-times todo-delete" ng-click="removeTodo(todo)"></i>
+  <!-- <button class="btn btn-xs btn-danger" ng-click="removeTodo(todo)" aria-label="Remove">X</button> -->
+      </li>
+    </ul>
+    <div class="form-group" id="todo-ip">
+      <div class="input-group">
+         <input type="text" class="form-control" ng-model="todoText" placeholder="Add Todo" autofocus >
+         <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="addTodo()">Add</button>
+         </span>
+      </div>
+    </div>
+    <!-- <form ng-submit="addTodo()">
+      <input type="text" class="form-control" ng-model="todoText" size="30"
+             placeholder="Add Todo" autofocus>
+      <input class="btn-primary" type="submit" value="add">
+    </form> -->
+  </section>
+
+
+    <!-- <div id="test" change-bg-color></div change-bg-color> -->
+  <section id="todo-new-features">
+    <h4>New Features</h4>
+    <p>Add proposed new features here.</p>
+  </section>
+
+  <section id="todo-fixes">
+    <h4>Fix</h4>
+    <p>Things that need to be fixed.</p>
+  </section>
+</div>

@@ -1,0 +1,17 @@
+<!-- inline editing template to be saved to a films collections in firebase.
+The firebase URL: https://film-list.firebaseio.com/films 
+
+-->
+<h2>inline edit template</h2>
+
+  <p>Click on a title or edit link to edit. Cancel edit and changes should 
+  revert to previous value. Press save to trigger some other handler.</p>
+ 
+<ul>
+<li ng-repeat="film in films">
+	<span ng-hide="film.editing" ng-dblclick="editFilm(film)">{{film.title}}</span>
+        <input ng-show="film.editing" ng-model="film.title" ng-blur="doneEditing(film)" autofocus />
+</li>
+</ul>   
+
+<div>{{films}}</div>	

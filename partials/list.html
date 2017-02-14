@@ -1,0 +1,15 @@
+<div id="list-wrapper" style="">
+  <header class="sub-header">
+		<h2 style="font-weight:200;">View image from list</h2>
+		<p>{{ msg }}</p>
+	</header>
+	<div class="list col-12">
+			<div class="items-block col-md-4">
+				<a class="list-group-item"
+				ng-repeat="item in itemList"
+				ng-class="{active: item.selected}"
+				ng-href="#/list/{{item.name}}" ng-click="selectItem(item)">{{item.name}}</a>
+			</div>
+			<div ui-view class="list-image col-md-6"></div>
+	</div>
+</div>

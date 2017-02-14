@@ -1,0 +1,21 @@
+{
+  "name": "angular-template-master",
+  "version": "1.0.0",
+  "description": "Angular Demo App",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Angular",
+    "JavaScript",
+    "Express"
+  ],
+  "author": "Mike McCann",
+  "license": "ISC"
+}
