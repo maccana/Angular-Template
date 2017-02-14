@@ -11,21 +11,16 @@ angular.module('MyComponents', [])
 				element.focus(function(){
 					element.select();
 				})
-<<<<<<< HEAD
-			}}})
 
-=======
 			}
 		}
 	})
+
 	.directive('defaultButton', function() {
 		return {
 			restrict: 'E',
 			transclude: true,
 			template: "<button class='btn btn-primary' ng-click='cta()' ng-transclude></button>"
-		}
-	})
-			template: "<button class='btn btn-primary' ng-click='cta()' ng-transclude>Click</button>"
 		}
 	})
 	.directive('contactCard', function() {
