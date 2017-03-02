@@ -100,6 +100,11 @@ var templates = angular.module('templates', [
 				templateUrl : 'partials/contact-card.html',
 				controller : 'ContactCardCtrl'
 			})
+			.state('/http', {
+				url : '/http',
+				templateUrl : 'partials/http.html',
+				controller : 'HttpCtrl'
+			})
 			// use the HTML5 History API
       // $locationProvider.html5Mode(true);
 
