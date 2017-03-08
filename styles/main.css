@@ -35,6 +35,11 @@ border:1px solid red;
 .fa-home {
   /*font-size: 19px;*/
 }
+/* Prevent page content from moving when scroll bar is added to browser window */
+html {
+  overflow-y: scroll;
+}
+
 #main {
   margin-top: 20px;
   /*padding: 0px 24px 24px 24px;*/
@@ -198,6 +203,18 @@ header,#ngUIRouterDemo ul {
 .cell h2 {
   margin: 0;
   color: #67728e;
+}
+
+/* ng-Show/Hide example */
+#ng-sh-img {
+  opacity: 1;
+}
+#ng-sh-content {
+  min-width: 80%;
+  max-width: 80%;
+  border: 1px solid #e7e7e7;
+  margin: auto;
+  text-align: center;
 }
 
 /* Tablet & smaller */
