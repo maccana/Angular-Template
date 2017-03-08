@@ -56,10 +56,10 @@ var templates = angular.module('templates', [
 				templateUrl: 'partials/toggle.html',
 				controller: 'toggleImageCtrl'
 			})
-			.state('todo', {
-				url: '/todo',
-				templateUrl: 'partials/todo.html',
-				controller: 'TodoCtrl'
+			.state('show-hide', {
+				url: '/show-hide',
+				templateUrl: 'partials/show-hide.html',
+				controller: 'ShowHideCtrl'
 			})
 			.state('storage', {
 				url: '/storage',

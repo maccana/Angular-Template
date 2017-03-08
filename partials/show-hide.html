@@ -1,0 +1,17 @@
+
+<h2>ng-Show</h2>
+<div class="intro">
+  <p>This example uses the <b>ng-show</b> directive to show or hide content. Each button has an
+  <b>ng-click</b> directive that call corresponding functions in the controller. Depending on which
+  button is clicked an $scope.show boolean variable is set to either true and false. True will show the
+  content and false will hide it.</p>
+</div>
+
+<div id="ng-show-hide-content">
+  <div class="button-wrap">
+    <button id="toggle-btn" class="btn btn-default" ng-click="showMe()">Show Image</button>
+    <button id="toggle-btn" class="btn btn-default" ng-click="hideMe()">Hide Image</button>
+  </div>
+  <br>
+	<img ng-show="show" src="http://morainelake.com/wp-content/uploads/2013/04/Canoeing-on-Moraine-Lake-home-page.jpg">
+</div>
