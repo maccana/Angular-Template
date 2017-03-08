@@ -204,17 +204,23 @@ header,#ngUIRouterDemo ul {
   margin: 0;
   color: #67728e;
 }
-
-/* ng-Show/Hide example */
-#ng-sh-img {
-  opacity: 1;
+.intro {
+  margin-bottom: 30px;
 }
-#ng-sh-content {
+/* ng-Show/Hide example */
+#ng-show-hide-content img {
+  opacity: 1; /* Resest from current app default img opacity */
+  max-width: 75%;
+}
+#ng-show-hide-content {
   min-width: 80%;
   max-width: 80%;
-  border: 1px solid #e7e7e7;
+  /*border: 1px solid #e7e7e7;*/
   margin: auto;
   text-align: center;
+}
+#ng-show-hide-content .button-wrap {
+  margin-bottom: 0px;
 }
 
 /* Tablet & smaller */
@@ -263,9 +269,14 @@ header,#ngUIRouterDemo ul {
   h1 {
     /*margin-bottom: 30px;*/
   }
-  .page-header {
-    margin-bottom: 44px;
+  p {
+    font-size: 14px;
+    line-height: 22px;
   }
+  .page-header {
+    /*margin-bottom: 44px;*/
+  }
+
   /* login */
   .login-wrapper {
     max-width: 60%;
@@ -324,7 +335,7 @@ header,#ngUIRouterDemo ul {
 @media screen and (min-width: 800px) {
  /* Desktop styles go here */
  #page-wrapper {
-   max-width: 1000px;
+   max-width: 960px;
  }
  img {
    opacity: .8;
