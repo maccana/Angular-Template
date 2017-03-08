@@ -11,5 +11,5 @@ To protect my personal Firebase, the database used in this project is currently 
 
 To Run
 -------
-`$cd <root>`  
-`$node server`
+`$ cd <root>`  
+`$ node server`
