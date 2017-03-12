@@ -8,7 +8,6 @@
 	<!-- <link rel="stylesheet" href="styles/bootstrap-3.2.0/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="styles/hack.css">
 	<link rel="stylesheet" href="styles/main.css">
-	<!-- <link rel="stylesheet" href="app/frost/style/style.css">
 	<link rel="stylesheet" href="app/frost/style/udy.css"> -->
 </head>
 <!-- init greeting.name to value 'Angular' -->
@@ -64,27 +63,22 @@
     </ul>
   </div> -->
 
-  <!-- <div id="main" class=""> -->
-    <header class="page-header">
-      <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1>
-    </header>
-    <!-- <div id="ngUIRouterDemo"> -->
-      <div ui-view class="">
-      <!-- partials dynamically inserted here -->
-      </div>
-    <!-- </div> -->
-  <!-- </div>-->
+  <header class="page-header">
+    <h1 style="font-color:#353535">Hello, {{greeting.name}}!</h1>
+  </header>
+
+  <div ui-view class=""></div>
+
 	<!-- Angular, jQuery etc. -->
 	<script src="jquery/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  	<!-- <script src="angular/angular.js"></script> -->
 	<script src="js/angular-ui-router.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="js/ui-bootstrap.js"></script>
 
 	<!-- App JS -->
 	<script src="app/app.js"></script>
-	<script src="js/directives/directives.js"></script>
+	<script src="app/directives/directives.js"></script>
 	<script src="app/services/services.js"></script>
 	<script src="app/controllers/controllers.js"></script>
 	<script src="app/controllers/inline-edit.js"></script>
@@ -92,21 +86,14 @@
 	<script src="app/controllers/mfirebase.js"></script>
 	<script src="app/controllers/todo.js"></script>
 	<script src="app/controllers/show-hide.js"></script>
-
 	<script src="app/controllers/login.js"></script>
 	<script src="app/controllers/list.js"></script>
 	<script src="app/controllers/random-colors.js"></script>
 	<script src="app/controllers/contact-card.js"></script>
 	<script src="app/controllers/http.js"></script>
-
-
-	<!-- Frost js -->
-	<!-- <script src="app/frost/directives/directives.js"></script>
-	<script src="app/frost/controllers/controllers.js"></script>
-	<script src="app/frost/services/services.js"></script> -->
-	<!-- Firebase -->
+	
+	<!-- Firebase and AngularFire -->
 	<script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
 	<script src='https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js'></script>
-
 </body>
 </html>
