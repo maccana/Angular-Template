@@ -1,5 +1,9 @@
 
 /**
+*	 CONTROLLERS
+*/
+
+/**
 *	 Toggle Image Ctrl
 */
 templates.controller('toggleImageCtrl', function($scope) {

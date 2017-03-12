@@ -8,8 +8,6 @@ var templates = angular.module('templates', [
 		'firebase'
 
 	])
-	/* Configuration of ui-router to inject views into ui-view element in index.html */
-
 	.config(function ($stateProvider, $urlRouterProvider, $locationProvider){
 
 		$urlRouterProvider.otherwise('home');
@@ -23,7 +21,6 @@ var templates = angular.module('templates', [
 			.state('home', {
 				url : '/home',
 				templateUrl: 'partials/home.html'
-
 			})
 			.state('model', {
 				url : '/model',
