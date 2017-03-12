@@ -152,13 +152,13 @@ var addRemoveGreetingCtrl = function ($scope) {
 /* Alternative syntax for controller function
 - To be implemented */
 function voteCtrl($scope){
-	$scope.value = 1;
+	$scope.value = 0;
 	$scope.incrementValue = function(value) {
 		$scope.value += 1;
 
 	}
 	$scope.resetValue = function() {
-		$scope.value = 1;
+		$scope.value = 0;
 		//console.log('reset'); //debugging in console
 	}
 	$scope.decrementValue = function(value) {
