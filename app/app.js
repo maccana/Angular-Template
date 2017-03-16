@@ -46,7 +46,7 @@ var templates = angular.module('templates', [
 				templateUrl: 'partials/list.html',
 				controller: 'ListCtrl'
 			})
-			.state('list.item', {
+			.state('list.item', { // Nested state - view template is embedded in parent
 				url : '/:item', /* NOTE: ng knows to append item param to list url */
 				templateUrl: 'partials/list.item.html',
 				controller: function ($scope, $stateParams) {
@@ -67,6 +67,11 @@ var templates = angular.module('templates', [
 				url: '/storage',
 				templateUrl: 'partials/storage.html',
 				controller: 'MaintCtrl'
+			})
+			.state('filter', {
+				url: '/filter',
+				templateUrl: 'partials/filter.html',
+				controller: 'FilterCtrl'
 			})
 			.state('firebase', {
 				url: '/firebase',

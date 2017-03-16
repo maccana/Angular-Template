@@ -1,0 +1,16 @@
+<h1>Filtering and Sorting a List</h1>
+<h3>Problem</h3>
+<p>You wish to filter and sort a relatively small list of items all available on the client.
+</p>
+<h3>Solution</h3>
+<p>For this example we will render a list of friends using the <code>ng-repeat</code> directive.
+  Using the built-in <code>filter</code> and <code>orderBy</code> filters we will filter and sort the friends list client-side.</p>
+<p>A plain text input field is used to enter the filter query and bound to the <code>filter</code>. Any changes are therefore directly used to filter the list.</p>
+<br>
+<form class="form-inline">
+  <input ng-model="query" type="text"
+    placeholder="Filter by" autofocus>
+</form>
+<li ng-repeat="friend in friends | filter:query | orderBy: 'name'">
+  {{friend.name}}
+</li>
