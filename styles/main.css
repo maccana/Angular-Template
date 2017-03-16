@@ -93,6 +93,17 @@ img {
 
 /* end todo styles */
 
+/* Filter */
+p>code {
+    font-family: "Source Code Pro", Consolas, monospace;
+    font-weight: 300;
+    /*font-size: 0.9rem;*/
+    color: #B27E00;
+    background-color: #fff0cc;
+    padding: 3px 4px;
+    border-radius: 4px;
+}
+
 .list-image {
   min-height:200px!important;
 }
