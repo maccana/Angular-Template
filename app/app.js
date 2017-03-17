@@ -58,6 +58,11 @@ var templates = angular.module('templates', [
 				templateUrl: 'partials/toggle.html',
 				controller: 'toggleImageCtrl'
 			})
+			.state('timeout', {
+				url : '/timeout',
+				templateUrl: 'partials/timeout.html',
+				controller: 'TimeoutCtrl'
+			})
 			.state('show-hide', {
 				url: '/show-hide',
 				templateUrl: 'partials/show-hide.html',
