@@ -1,17 +1,12 @@
 /* Todo Ctrl */
 (function() {
    'use strict';
-
-
-  // templates.controller('TodoCtrl', function($scope, $http) {
     function TodoController($scope, $http) {
 
       $scope.pageTitle = 'Todo List App';
-
       // GET dummy JSON data with $http service
       $http.get('js/TodoList.json').success(function(data){
         $scope.todos = data;
-
       })
 
       // CREATE a todo
@@ -34,7 +29,7 @@
       	})
       	return count;
       }
-      
+
       // Archive todos
       $scope.archive = function() {
       	var oldTodos = $scope.todos;
@@ -46,4 +41,4 @@
     }
     angular.module('templates')
     .controller('TodoCtrl', TodoController);
-})();
+  })();
