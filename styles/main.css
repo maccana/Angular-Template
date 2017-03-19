@@ -61,6 +61,15 @@ header h1 {
 img {
   width:100%;
 }
+/* Firebase styles */
+
+#firebase-wrapper .delete {
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 21px;
+}
 
 /* ToDo styles */
 
