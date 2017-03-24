@@ -3,10 +3,12 @@
 *	 CONTROLLERS
 */
 
+angular.module('templates')
+
 /**
 *	 Toggle Image Ctrl
 */
-templates.controller('toggleImageCtrl', function($scope) {
+.controller('toggleImageCtrl', function($scope) {
 	$scope.visible = true;
 	$scope.toggle = function() {
 		var btn = document.getElementById('toggle-btn');
