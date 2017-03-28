@@ -29,6 +29,12 @@
 					templateUrl: 'partials/model.html',
 					controller : 'modelCtrl'
 				})
+				.state('currency', {
+					url : '/currency',
+					templateUrl: 'partials/currency-filter.html',
+					controller : 'CurrencyCtrl',
+					controllerAs: 'vm'
+				})
 				.state('inline-edit', {
 					url : '/inline-edit',
 					templateUrl: 'partials/inlineEdit.html',
