@@ -1,0 +1,7 @@
+<h4>Currency Filter</h4>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="product in vm.products">
+    <h3>{{ product.name }}</h3>
+    <em class="pull-right" style="margin-top:-30px;margin-left:0px">{{ product.price | currency }}</em>
+  </li>
+</ul>
