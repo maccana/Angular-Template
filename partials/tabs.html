@@ -1,5 +1,9 @@
 <h1>Tabs</h1>
-<p>Using tabs</p>
+<p>Using tabs to change a value being set inside an <code>ng-click</code> to
+dynamically re-evalute an expression attached to a message.</p>
+<p>An <code>ng-show</code> directive inside the output element is also given the
+same key as the expression. This means the message will not display on page load since
+the value has not yet been set and the key therefor = 'false'.</p>
 <h2>What is your favorite animal?</h2>
 <ul class="nav nav-pills">
   <li><a href ng-click="choice  = 'Cat'">Cat</a></li>
