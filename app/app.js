@@ -35,6 +35,12 @@
 					controller : 'CurrencyCtrl',
 					controllerAs: 'vm'
 				})
+				.state('tabs', {
+					url : '/tabs',
+					templateUrl: 'partials/tabs.html',
+					controller : 'TabsCtrl',
+					controllerAs: 'vm'
+				})
 				.state('inline-edit', {
 					url : '/inline-edit',
 					templateUrl: 'partials/inlineEdit.html',
