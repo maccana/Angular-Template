@@ -1,13 +1,21 @@
+
 <h1>Tabs</h1>
 <p>Using tabs to change a value being set inside an <code>ng-click</code> to
 dynamically re-evalute an expression attached to a message.</p>
 <p>An <code>ng-show</code> directive inside the output element is also given the
 same key as the expression. This means the message will not display on page load since
-the value has not yet been set and the key therefor = 'false'.</p>
+the value has not yet been set and the key therefore = 'false'.</p>
+<!-- <section ng-init="choice = 'Not Sure...'"></section> -->
 <h2>What is your favorite animal?</h2>
 <ul class="nav nav-pills">
   <li><a href ng-click="choice  = 'Cat'">Cat</a></li>
   <li><a href ng-click="choice  = 'Dog'">Dog</a></li>
   <li><a href ng-click="choice  = 'Pelican'">Pelican</a></li>
 </ul>
+<h3 ng-hide="choice">Waiting for your choice....</h3>
 <h3 ng-show="choice">You chose {{choice}}</h3>
+<h4>Comments:</h4>
+
+<div class="panel" ng-show="choice === 'Cat'">Lovely!!!</div>
+<div class="panel" ng-show="choice === 'Dog'">Just Ok.</div>
+<div class="panel" ng-show="choice === 'Pelican'">Not sure about that!</div>
