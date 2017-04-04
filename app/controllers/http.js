@@ -1,6 +1,8 @@
-/* HTTP Ctrl */
 (function() {
+
   'use strict';
+
+  /* HTTP Ctrl */
   function HttpController($scope, $http) {
       $http.get("partials/httpMsg.html")
         .then(function(response) {
