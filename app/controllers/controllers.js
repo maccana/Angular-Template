@@ -147,23 +147,3 @@ var addRemoveGreetingCtrl = function ($scope) {
 			$scope.text = "";
 	});
 }
-
-/**
-*	 Voting Ctrl
-*/
-/* Alternative syntax for controller function
-- To be implemented */
-function voteCtrl($scope){
-	$scope.value = 0;
-	$scope.incrementValue = function(value) {
-		$scope.value += 1;
-
-	}
-	$scope.resetValue = function() {
-		$scope.value = 0;
-		//console.log('reset'); //debugging in console
-	}
-	$scope.decrementValue = function(value) {
-		$scope.value -= 1;
-	}
-}
