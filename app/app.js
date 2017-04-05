@@ -114,7 +114,8 @@
 				.state('/vote', {
 					url : '/vote',
 					templateUrl : 'partials/voting.html',
-					controller : 'voteCtrl'
+					controllerAs: 'vm',
+					controller : 'VoteCtrl'
 				})
 				.state('/color', {
 					url : '/color',
