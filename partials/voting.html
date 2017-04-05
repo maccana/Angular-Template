@@ -1,12 +1,12 @@
 <!-- <h4></h4> -->
-<div id="vote-wrapper" style="">
+<div id="vote-wrapper" style="" ng-controller="VoteCtrl as vm">
   <header class="sub-header">
 		<h2 style="font-weight:200;">Voter</h2>
 		<p>Template for basic voting system</p>
 	</header>
 	<!-- <div> -->
-		<p>Value: {{value}}</p>
-		<button ng-click="incrementValue()">Add 1 to value</button>
-		<button ng-click="decrementValue()">Subtract 1 from value</button>
-		<button ng-click="resetValue()">Reset</button>
+		<p>Value: {{vm.value}}</p>
+		<button ng-click="vm.incrementValue()">Add 1 to value</button>
+		<button ng-click="vm.decrementValue()">Subtract 1 from value</button>
+		<button ng-click="vm.resetValue()">Reset</button>
 	</div>
