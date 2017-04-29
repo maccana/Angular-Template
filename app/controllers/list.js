@@ -1,17 +1,21 @@
-'use strict';
+(function(){
 
-/* List Ctrl */
+  'use strict';
 
-templates.controller('ListCtrl', function($scope) {
- $scope.msg = 'Select an image from the list to view it.';
+  /* Image List Ctrl */
 
- /* itemList is bound to the list view via scope */
- $scope.itemList = [
-   {name: "French"},
-   {name: "Guitar"},
-   {name: "Jog"},
-   {name: "Wine"},
-   {name: "Angular"},
+  function ListController($scope) {
 
- ];
-})
+     $scope.itemList = [
+        {name: "French"},
+        {name: "Guitar"},
+        {name: "Jog"},
+        {name: "Wine"},
+        {name: "Angular"}
+     ]
+  }
+
+  angular.module('templates')
+  .controller('ListCtrl', ListController);
+  
+})();
