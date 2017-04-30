@@ -5,9 +5,10 @@
   /*  Dir1 Ctrl - contact-card */
   angular.module('templates')
     .controller('ContactCardCtrl', function($scope) {
+
       $scope.pageTitle = 'Example Directive - Contact Card';
 
-     $scope.friends = [
+      $scope.friends = [
        {
          id: 0,
          firstName: 'Will',
@@ -29,9 +30,9 @@
            { id: 1, text: 'Someday I\'ll be super rich. Oh wait I am super rich!'},
            { id: 2, text: 'I way could live in the ghetto. Could I have a butler?'}
          ]
-       },
+       }
 
      ]
-   });
+    });
 
  })();
