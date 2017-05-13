@@ -1,15 +1,19 @@
-'use strict';
+(function(){
+  'use strict';
 
-/* HTTP Ctrl */
+  /* Show/Hide Ctrl */
 
-templates.controller('ShowHideCtrl', function($scope, $http) {
-  // $scope.msg = 'show hide ctrl connected'; debugging
+  function ShowHideController($scope) {
+    // $scope.msg = 'show hide ctrl connected'; debugging
 
-  $scope.showMe = function(){
-   $scope.show=true;
+    $scope.showMe = function(){
+     $scope.show=true;
+    }
+    $scope.hideMe = function(){
+     $scope.show=false;
+    }
+
   }
-  $scope.hideMe = function(){
-   $scope.show=false;
-  }
-
-})
+  angular.module('templates')
+  .controller('ShowHideCtrl', ShowHideController);
+})();
