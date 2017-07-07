@@ -1,1 +1,7 @@
 <h3>{{ friend.firstName }}</h3>  
+<h4>Tweets</h4>
+<ul>
+    <li ng-repeat="tweet in friend.tweets">
+        {{tweet.text}}
+    </li>
+</ul>
