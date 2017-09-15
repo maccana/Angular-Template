@@ -18,7 +18,6 @@ angular.module('MyComponents', [])
 			}
 		}
 	})
-
 	.directive('defaultButton', function() {
 		return {
 			restrict: 'E',
